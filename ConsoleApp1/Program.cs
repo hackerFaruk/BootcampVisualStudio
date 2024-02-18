@@ -131,6 +131,49 @@ internal class Program
         Console.WriteLine(sum);
     }
 
+    private  static void sumoddeven()
+    {
+        int evenSum=0;
+        int oddSum = 0;
+        int totalSum = 0;
+        int inp = 0;
+        int evenCounter = 0;
+        int oddCounter = 0;
+        int stepAmount = 0;
 
+        Console.WriteLine(" please provide some input your evens and odds numbers will summ separtely");
+
+
+        for (int i = 0; i < stepAmount; i++)
+        {
+
+            try
+            {
+                inp = int.Parse(Console.ReadLine());
+                totalSum += inp;
+
+                if (inp % 2  == 0 ) { evenSum = evenSum + inp;  evenCounter++; }
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("sayı girmedin ki sen");
+                return;
+            }
+
+            oddCounter = stepAmount-evenCounter;
+            oddSum = totalSum - evenSum;
+            Console.WriteLine("girilen  sayıların toplamı: " + totalSum);
+
+            Console.WriteLine("girilen tek sayı sayısı: " + oddCounter + "   bu sayıların toplamı: " + oddSum);
+            Console.WriteLine("girilen çift sayı sayısı: " + evenCounter + "   bu sayıların toplamı: " + evenSum);
+
+
+
+        }
+
+
+
+    }
 
 }
