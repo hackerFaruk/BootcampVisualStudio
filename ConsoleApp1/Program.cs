@@ -206,7 +206,7 @@ internal class Program
         // create regex here 
 
 
-        if (match.Success)
+        if (false)
         {
             Console.WriteLine("Pattern found at the start of the string.");
         }
