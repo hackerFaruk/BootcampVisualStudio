@@ -10,6 +10,7 @@ internal class Program
     {"comparetwo", 1},
     {"sumfive", 2},
             {"exit",3 },
+            {"sumoddeven",4 },
 };
 
 
@@ -35,6 +36,9 @@ internal class Program
                 break;
             case 3:
                 isRecall = false;
+                break;
+            case 4:
+                sumoddeven();
                 break;
 
 
