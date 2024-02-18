@@ -40,6 +40,8 @@ internal class Program
 
         if (isRecall)
         {
+            // if exit command is given isRecal becomes false preventing recursion and 
+            // ending this applciation 
             Main(args);
         }
     }
