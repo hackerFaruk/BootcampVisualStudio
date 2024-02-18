@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 using System.Text.RegularExpressions;
-using System
+using System;
 
 internal class Program
 {
@@ -203,6 +203,8 @@ internal class Program
         int[] possiblity =  new int[keywords.Length];
 
 
+        
+
 
         // create regex here 
 
@@ -220,7 +222,12 @@ internal class Program
             else { Console.WriteLine("cantt find"); }
 
             // during this loop also create points 
-
+            if (key.Length == userInput.Length)
+            {
+                Console.WriteLine("exact length match ");
+            }
+            else if( key.Length* 0.8 <= userInput.Length  && userInput.Length <= key.Length *1.2   )
+            { Console.WriteLine("lenght match found "); }
             
 
 
