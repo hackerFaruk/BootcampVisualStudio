@@ -1,9 +1,16 @@
 ﻿using System.Data.Common;
 using System.Text.RegularExpressions;
 using System;
+using System.Runtime.CompilerServices;
 
 internal class Program
 {
+
+    // needs to be static for methods reach it 
+    public static string name = "My Great Console";
+ 
+
+
     private static void Main(string[] args)
     {
         var options = new Dictionary<string, int>()
@@ -18,6 +25,8 @@ internal class Program
 
         bool isRecall = true;
 
+
+        Console.WriteLine(name);
         
         Console.WriteLine("uygulama adı veriniz yada help yazarak uygulamaları görün");
         string choice = ""; // prevents nulll
