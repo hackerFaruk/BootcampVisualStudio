@@ -18,8 +18,10 @@ internal class Program
 
         bool isRecall = true;
 
+        
         Console.WriteLine("uygulama adı veriniz yada help yazarak uygulamaları görün");
-        string choice = Console.ReadLine();
+        string choice = ""; // prevents nulll
+        choice = Console.ReadLine();
 
 
         // for test purposes autocomplete runs for each input and provides  result
