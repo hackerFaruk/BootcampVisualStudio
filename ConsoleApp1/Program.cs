@@ -116,8 +116,15 @@ internal class Program
         Console.WriteLine(sum);
     }
 
+
+
     private static void sumoddeven()
     {
+
+        /// <summary>
+        /// Auto Complete method  <c>Draw</c>  calculates sum of numbers provided by users .
+        /// </summary>
+        /// 
         int evenSum = 0;
         int oddSum = 0;
         int totalSum = 0;
@@ -163,6 +170,25 @@ internal class Program
     }
 
 
+    /// <summary>
+    /// Auto Complete method  <c>Draw</c>  Aims to midigate  user typos while input for program selected is provided by user.
+    /// </summary>
+    private static int autoComplete( string userInput, Dictionary<string, int> options)
+    {
+        // user input is input given  by user 
+        // dictonary is list of functions we provide 
+        // this funntion returns case number from options hashmap to use in switch case loop
+
+        // to ensure being case insensitive
+        userInput = userInput.ToLower();
+
+
+        foreach ( var option in options)
+        {
+
+        }
+
+    }
 
 
 }
