@@ -206,20 +206,23 @@ internal class Program
         // create regex here 
 
 
-        if (false)
-        {
-            Console.WriteLine("Pattern found at the start of the string.");
-        }
-        else { Console.WriteLine("cantt find"); }
-
-
-
         foreach ( var key in keywords)
         {
-           // foreach possible selection in options we need a check to see if our query match any of them
-          int a  = 0 ;
-      
+            
+
+            if (key.StartsWith(userInput))
+            {
+                Console.WriteLine("Pattern found at " + key);
+                break;
+
+            }
+            else { Console.WriteLine("cantt find"); }
+
+
         }
+
+
+        
 
     }
 
