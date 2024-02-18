@@ -208,8 +208,7 @@ internal class Program
         
 
 
-        // create regex here 
-
+        // create regex here
 
         foreach ( var key in keywords)
         {
