@@ -185,7 +185,7 @@ internal class Program
 
         foreach ( var option in options)
         {
-
+           // foreach possible selection in options we need a check to see if our query match any of them 
         }
 
     }
