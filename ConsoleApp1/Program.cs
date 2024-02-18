@@ -123,7 +123,7 @@ internal class Program
             }
             catch (Exception e)
             {
-                Console.WriteLine("sayı girmedin ki sen");
+                Console.WriteLine("sayı girmedin ki sen " + e);
                 return;
             }
         }
@@ -166,7 +166,7 @@ internal class Program
             }
             catch (Exception e)
             {
-                Console.WriteLine("sayı girmedin ki sen");
+                Console.WriteLine("sayı girmedin ki sen " + e);
                 return;
             }
 
@@ -218,6 +218,10 @@ internal class Program
 
             }
             else { Console.WriteLine("cantt find"); }
+
+            // during this loop also create points 
+
+            
 
 
         }
