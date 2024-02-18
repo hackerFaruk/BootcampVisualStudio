@@ -184,10 +184,19 @@ internal class Program
         // to ensure being case insensitive
         userInput = userInput.ToLower();
 
+        // takes possible options in array so i can move easier in 
+        string[] keywords = options.Keys.ToArray()
 
-        foreach ( var option in options)
+        // to asses porrisblity of each match we give points 
+        int[] possiblity =  new int[keywords.Length];
+
+
+
+        foreach ( var key in keywords)
         {
-           // foreach possible selection in options we need a check to see if our query match any of them 
+           // foreach possible selection in options we need a check to see if our query match any of them
+
+      
         }
 
     }
