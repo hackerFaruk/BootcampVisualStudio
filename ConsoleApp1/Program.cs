@@ -1,4 +1,5 @@
 ﻿using System.Data.Common;
+using System.Text.RegularExpressions;
 
 internal class Program
 {
@@ -11,14 +12,23 @@ internal class Program
             { "sumfive", 2 },
             { "exit", 3 },
             { "sumoddeven", 4 },
+            
         };
 
         bool isRecall = true;
 
         Console.WriteLine("uygulama adı veriniz yada help yazarak uygulamaları görün");
         string choice = Console.ReadLine();
+
+
+        // for test purposes autocomplete runs for each input and provides  result
+        autoComplete(choice, options);
+
+
+
+
         int selection = options[choice];
-        Console.Clear();
+       //  Console.Clear();  // clear is closed to see auto complete performance 
         switch (selection)
         {
             case 0:
@@ -36,6 +46,7 @@ internal class Program
             case 4:
                 sumoddeven();
                 break;
+            
         }
 
         if (isRecall)
@@ -175,7 +186,7 @@ internal class Program
     /// <summary>
     /// Auto Complete method  <c>Draw</c>  Aims to midigate  user typos while input for program selected is provided by user.
     /// </summary>
-    private static int autoComplete( string userInput, Dictionary<string, int> options)
+    private static void autoComplete( string userInput, Dictionary<string, int> options)
     {
         // user input is input given  by user 
         // dictonary is list of functions we provide 
@@ -185,17 +196,28 @@ internal class Program
         userInput = userInput.ToLower();
 
         // takes possible options in array so i can move easier in 
-        string[] keywords = options.Keys.ToArray()
+        string[] keywords = options.Keys.ToArray();
 
         // to asses porrisblity of each match we give points 
         int[] possiblity =  new int[keywords.Length];
 
 
 
+        // create regex here 
+
+
+        if (match.Success)
+        {
+            Console.WriteLine("Pattern found at the start of the string.");
+        }
+        else { Console.WriteLine("cantt find"); }
+
+
+
         foreach ( var key in keywords)
         {
            // foreach possible selection in options we need a check to see if our query match any of them
-
+          int a  = 0 ;
       
         }
 
