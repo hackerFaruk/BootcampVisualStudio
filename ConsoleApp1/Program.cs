@@ -20,7 +20,7 @@ internal class Program
             { "sumfive", 2 },
             { "exit", 3 },
             { "sumoddeven", 4 },
-            {"keydetetc" ,5 },
+            {"keydetect" ,5 },
             
         };
 
@@ -60,7 +60,7 @@ internal class Program
                 sumoddeven();
                 break;
             case 5:
-                //keydetect();
+                keydetect();
                 break;
             
         }
