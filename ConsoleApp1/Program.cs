@@ -109,11 +109,33 @@ internal class Program
 
 
     public static void dungeonCrawler(){
+
+
       ConsoleKeyInfo cki;
+
       int heroX=4;
       int heroY = 4;
 
-      printDungeon(heroX, heroY);
+
+        do
+        {
+          
+        Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+        cki = Console.ReadKey();
+        Console.Clear();
+        // since upper most line is zero this works a little diffrent in Y direction 
+        if(cki.Key.ToString()== "W" ) {heroY--;}
+        else if(cki.Key.ToString()== "D" ) {heroX++;}
+        else if(cki.Key.ToString()== "S" ) {heroY++;}
+        else if(cki.Key.ToString()== "A" ) {heroX--;}
+        printDungeon(heroX, heroY);
+        
+        } while (cki.Key != ConsoleKey.Escape);
+
+
+
+
+
 
 
 
