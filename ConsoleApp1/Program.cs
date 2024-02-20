@@ -21,7 +21,7 @@ internal class Program
             { "exit", 3 },
             { "sumoddeven", 4 },
             {"keydetect" ,5 },
-            
+            {"dungeonCrawler" ,6 },
         };
 
         bool isRecall = true;
@@ -34,14 +34,14 @@ internal class Program
         choice = Console.ReadLine();
 
 
-        // for test purposes autocomplete runs for each input and provides  result
-        autoComplete(choice, options);
+        //for test purposes autocomplete runs for each input and provides  result
+        //autoComplete(choice, options);
 
 
 
 
         int selection = options[choice];
-       //  Console.Clear();  // clear is closed to see auto complete performance 
+        Console.Clear();  // clear is closed to see auto complete performance 
         switch (selection)
         {
             case 0:
@@ -62,7 +62,11 @@ internal class Program
             case 5:
                 keydetect();
                 break;
+            case 6 :
+                dungeonCrawler();
+                break;
             
+                  
         }
 
         if (isRecall)
@@ -104,7 +108,35 @@ internal class Program
     }
 
 
+    public static void dungeonCrawler(){
+      ConsoleKeyInfo cki;
+      printDungeon();
 
+
+
+    }
+    public static void printDungeon(){
+       
+    int dungeonWidth = 7 ;
+    int dungeonHeight = 7 ;
+
+    string horizontalWall =  new string('-', dungeonWidth);
+    // used single ' ' to indicate char 
+    string verticalWall = "|";
+    string emptySpace = "_";
+    string emptyLine= new string('_',dungeonWidth);
+    
+
+
+    Console.WriteLine(horizontalWall);
+
+     for (int i = 0; i < dungeonHeight-2 ; i++){
+    Console.WriteLine(emptyLine);
+   
+     }
+Console.WriteLine(horizontalWall);
+
+    }
 
     private static void compare()
     {
