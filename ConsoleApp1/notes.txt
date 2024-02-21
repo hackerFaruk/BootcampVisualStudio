@@ -3,3 +3,17 @@ dotnet new console -n MyAppName
 
 now use dotnet command to add new class inside project 
 dotnet new class -n MyClassName
+
+static methods cant be called from instance 
+static method is kept on type level and not in object level ( type level means class def in python)
+staic methods is useful if you dont need any object level data (ones you get during init)
+it is simple and more optimized 
+
+keywords for variable iinit 
+
+readonly : a variable that cannot be changed after initlization can be created value in method 
+const : a constant variable that cannot be changed but it needs value to be given during init of variable 
+this : refers to instance when object is maded from given class
+
+public : you can call this method from diffrent files in same namespace or assembly
+private : you cant call from outside
