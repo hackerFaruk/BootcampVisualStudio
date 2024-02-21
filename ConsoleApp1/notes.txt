@@ -1,0 +1,5 @@
+i have used dotnet cli to create a console app 
+dotnet new console -n MyAppName
+
+now use dotnet command to add new class inside project 
+dotnet new class -n MyClassName
