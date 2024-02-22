@@ -1,16 +1,14 @@
-﻿using System.Data.Common;
-using System.Text.RegularExpressions;
-using System;
+﻿using System;
+using System.Data.Common;
 using System.Runtime.CompilerServices;
-namespace ConsoleApp1;  // i use namesapce COnsoleApp1 so i can reach other classes in my cs file 
+using System.Text.RegularExpressions;
+
+namespace ConsoleApp1; // i use namesapce COnsoleApp1 so i can reach other classes in my cs file
 
 internal class Program
 {
-
-    // needs to be static for methods reach it 
+    // needs to be static for methods reach it
     public static string name = "My Great Console";
- 
-
 
     private static void Main(string[] args)
     {
@@ -21,19 +19,17 @@ internal class Program
             { "sumfive", 2 },
             { "exit", 3 },
             { "sumoddeven", 4 },
-            {"keydetect" ,5 },
-            {"dungeonCrawler" ,6 },
+            { "keydetect", 5 },
+            { "dungeonCrawler", 6 },
         };
 
         bool isRecall = true;
 
-
         Console.WriteLine(name);
-        
+
         Console.WriteLine("uygulama adı veriniz yada help yazarak uygulamaları görün");
         string choice = ""; // prevents nulll
         choice = Console.ReadLine();
-
 
         //for test purposes autocomplete runs for each input and provides  result
         //autoComplete(choice, options);
@@ -41,7 +37,7 @@ internal class Program
 
 
         int selection = options[choice];
-        Console.Clear();  // clear is closed to see auto complete performance 
+        Console.Clear(); // clear is closed to see auto complete performance
         switch (selection)
         {
             case 0:
@@ -62,17 +58,15 @@ internal class Program
             case 5:
                 keydetect();
                 break;
-            case 6 :
+            case 6:
                 dungeonCrawlerGame.dungeonCrawler();
                 break;
-            
-                  
         }
 
         if (isRecall)
         {
-            // if exit command is given isRecal becomes false preventing recursion and 
-            // ending this applciation 
+            // if exit command is given isRecal becomes false preventing recursion and
+            // ending this applciation
             Main(args);
         }
     }
@@ -86,8 +80,6 @@ internal class Program
         }
     }
 
-
-
     public static void keydetect()
     {
         ConsoleKeyInfo cki;
@@ -100,15 +92,15 @@ internal class Program
         {
             cki = Console.ReadKey();
             Console.Write(" --- You pressed ");
-            if ((cki.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
-            if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
-            if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+            if ((cki.Modifiers & ConsoleModifiers.Alt) != 0)
+                Console.Write("ALT+");
+            if ((cki.Modifiers & ConsoleModifiers.Shift) != 0)
+                Console.Write("SHIFT+");
+            if ((cki.Modifiers & ConsoleModifiers.Control) != 0)
+                Console.Write("CTL+");
             Console.WriteLine(cki.Key.ToString());
         } while (cki.Key != ConsoleKey.Escape);
     }
-
-
-          
 
     private static void compare()
     {
@@ -173,15 +165,12 @@ internal class Program
         Console.WriteLine(sum);
     }
 
-
-
     private static void sumoddeven()
     {
-
         /// <summary>
         /// Auto Complete method  <c>Draw</c>  calculates sum of numbers provided by users .
         /// </summary>
-        /// 
+        ///
         int evenSum = 0;
         int oddSum = 0;
         int totalSum = 0;
@@ -226,59 +215,47 @@ internal class Program
         }
     }
 
-
     /// <summary>
     /// Auto Complete method  <c>Draw</c>  Aims to midigate  user typos while input for program selected is provided by user.
     /// </summary>
-    private static void autoComplete( string userInput, Dictionary<string, int> options)
+    private static void autoComplete(string userInput, Dictionary<string, int> options)
     {
-        // user input is input given  by user 
-        // dictonary is list of functions we provide 
+        // user input is input given  by user
+        // dictonary is list of functions we provide
         // this funntion returns case number from options hashmap to use in switch case loop
 
         // to ensure being case insensitive
         userInput = userInput.ToLower();
 
-        // takes possible options in array so i can move easier in 
+        // takes possible options in array so i can move easier in
         string[] keywords = options.Keys.ToArray();
 
-        // to asses porrisblity of each match we give points 
-        int[] possiblity =  new int[keywords.Length];
-
-
-        
-
+        // to asses porrisblity of each match we give points
+        int[] possiblity = new int[keywords.Length];
 
         // create regex here
 
-        foreach ( var key in keywords)
+        foreach (var key in keywords)
         {
-            
-
             if (key.StartsWith(userInput))
             {
                 Console.WriteLine("Pattern found at " + key);
                 break;
-
             }
-            else { Console.WriteLine("cantt find"); }
+            else
+            {
+                Console.WriteLine("cantt find");
+            }
 
-            // during this loop also create points 
+            // during this loop also create points
             if (key.Length == userInput.Length)
             {
                 Console.WriteLine("exact length match ");
             }
-            else if( key.Length* 0.8 <= userInput.Length  && userInput.Length <= key.Length *1.2   )
-            { Console.WriteLine("lenght match found "); }
-            
-
-
+            else if (key.Length * 0.8 <= userInput.Length && userInput.Length <= key.Length * 1.2)
+            {
+                Console.WriteLine("lenght match found ");
+            }
         }
-
-
-        
-
     }
-
-
 }
