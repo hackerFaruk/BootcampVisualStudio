@@ -1,5 +1,7 @@
 ﻿using System;
-using ConsoleApp.DungeonCrawler;
+using ConsoleApp.DungeonCrawler;  //  porjeme ters tıklayıp add project refrence diyince usingde öneri olarak geldi bu 
+// DungeonCrawler game içindeki dungeon crawler static olduğu için objesisz çağırıyom 
+
 
 
 
@@ -13,8 +15,9 @@ namespace ConsoleApp.Start
         static void Main(string[] args)
         {
             Console.WriteLine(appName);
-            
-            
+
+         
+           
 
         }
     }
