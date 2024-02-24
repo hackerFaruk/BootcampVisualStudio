@@ -18,7 +18,7 @@ namespace ConsoleApp.DungeonCrawler
         {
             Console.WriteLine(appName);
 
-            dungeonCrawlerGame.renderDungeon();
+            dungeonCrawlerGame.movementControls();
         }
     }
 
@@ -139,9 +139,10 @@ namespace ConsoleApp.DungeonCrawler
                 
                 if (heroY < YMin)
                     heroY = YMin;
-                
+
 
                 printDungeon(heroX, heroY);
+                //renderDungeon(heroX, heroY);
             } while (cki.Key != ConsoleKey.Escape);
         }
 
@@ -183,10 +184,11 @@ namespace ConsoleApp.DungeonCrawler
                 }
             }
             Console.WriteLine(horizontalWall);
+            Console.WriteLine($"hero pos x: {heroX}    y: {heroY} ");
         }
 
 
-        internal static void renderDungeon()
+        internal static void renderDungeon(int heroX =4, int heroY=4)
         {
             // it need to take matrice and print it on screen
 
@@ -198,10 +200,11 @@ namespace ConsoleApp.DungeonCrawler
             char verticalWall = '|';
 
             string currentLine = "";
-
+            char hero = '@';
+            char endPortal = '0';
 
             // Create a 2D array (matrix) with the specified dimensions
-            char[,] matrix = new char[rows, cols];
+            char[,] dungeonSpace = new char[rows, cols];
 
          
             // Initialize the matrix with '_' characters using nested loops
@@ -209,11 +212,20 @@ namespace ConsoleApp.DungeonCrawler
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    matrix[i, j] = '_';
+                    dungeonSpace[i, j] = '_';
                 }
             }
 
 
+            // set hero position 
+            // herox 2 heroy 2 en sol üst köşe
+            // herox dungeonx-1 heroy dungeon-1 en sağ alt köşe
+
+
+            dungeonSpace[heroX-1, heroY-1] = hero;
+            dungeonSpace[1, 1] = '1';
+            dungeonSpace[2, 2] = '2';
+            dungeonSpace[3, 3] = '3';
 
 
 
@@ -224,12 +236,12 @@ namespace ConsoleApp.DungeonCrawler
             // get length 0 is rows 
             //get length 1 is cols 
 
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < dungeonSpace.GetLength(0); i++)
             {
                 currentLine = "| ";
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < dungeonSpace.GetLength(1); j++)
                 {
-                    currentLine = currentLine + matrix[i, j] +" " ;
+                    currentLine = currentLine + dungeonSpace[i, j] +" " ;
                 }
                 currentLine = currentLine + verticalWall;
                 Console.WriteLine(currentLine);
