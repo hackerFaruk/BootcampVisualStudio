@@ -5,6 +5,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleApp.DungeonCrawler
 {
+
+ 
+
+
+
     internal class Program
     {
         private static string appName = " This is Dungeon Crawlerr";
@@ -19,8 +24,24 @@ namespace ConsoleApp.DungeonCrawler
 
     public class dungeonCrawlerGame
     {
+
+        private static int heroX = 4;
+        private static int heroY = 4;
+        private static int dungeonX = 7;
+        private static int dungeonY = 7;
+
+        private static int[] heroPosition = [heroX, heroY];
+        private static int[] endPortalPositions = [dungeonX - 1, dungeonY - 1];
+
+
+
+
+
+
         public static void dungeonCrawler()
         {
+
+            
             // it also consist gameplay currently but i want to add some systerm for it to  
             movementControls();
 
@@ -137,6 +158,7 @@ namespace ConsoleApp.DungeonCrawler
             emptyLine = verticalWall + emptyLine + verticalWall;
 
             char hero = '@';
+            char endPortal = '0';
 
             int leftSide = heroX - 1 - 1; // -1 for wall and -1 for hero space
             int rightSide = dungeonWidth - heroX - 1; // -1 for horizontalWall
@@ -162,5 +184,13 @@ namespace ConsoleApp.DungeonCrawler
             }
             Console.WriteLine(horizontalWall);
         }
+
+
+        private static void renderDungeon()
+        {
+            // it need to take matrice and print it on screen
+        }
+
+
     }
 }
