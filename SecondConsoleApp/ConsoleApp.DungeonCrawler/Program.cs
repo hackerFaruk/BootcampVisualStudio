@@ -65,9 +65,10 @@ namespace ConsoleApp.DungeonCrawler
 
             do
             {
-                Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+               
                 cki = Console.ReadKey();
                 Console.Clear();
+                Console.WriteLine("Press the Escape (Esc) key to quit: \n");
                 key = cki.Key.ToString();
 
                 if (movementButtons.ContainsKey(key))
@@ -108,12 +109,16 @@ namespace ConsoleApp.DungeonCrawler
                 // hero position limit check
                 if (heroX > XMax)
                     heroX = XMax;
+                
                 if (heroY > YMax)
                     heroY = YMax;
+                
                 if (heroX < XMin)
                     heroX = XMin;
+                
                 if (heroY < YMin)
                     heroY = YMin;
+                
 
                 printDungeon(heroX, heroY);
             } while (cki.Key != ConsoleKey.Escape);
