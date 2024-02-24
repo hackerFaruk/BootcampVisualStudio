@@ -18,7 +18,7 @@ namespace ConsoleApp.DungeonCrawler
         {
             Console.WriteLine(appName);
 
-            dungeonCrawlerGame.movementControls();
+            dungeonCrawlerGame.renderDungeon();
         }
     }
 
@@ -186,9 +186,58 @@ namespace ConsoleApp.DungeonCrawler
         }
 
 
-        private static void renderDungeon()
+        internal static void renderDungeon()
         {
             // it need to take matrice and print it on screen
+
+            // Define the dimensions playable area inside dungeon
+            int rows = dungeonX-2;
+            int cols = dungeonY-2;
+
+            string horizontalWall = new string('-', dungeonX*2-1);
+            char verticalWall = '|';
+
+            string currentLine = "";
+
+
+            // Create a 2D array (matrix) with the specified dimensions
+            char[,] matrix = new char[rows, cols];
+
+         
+            // Initialize the matrix with '_' characters using nested loops
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    matrix[i, j] = '_';
+                }
+            }
+
+
+
+
+
+            // üst duvar 
+            Console.WriteLine(horizontalWall);
+
+
+            // get length 0 is rows 
+            //get length 1 is cols 
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                currentLine = "| ";
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    currentLine = currentLine + matrix[i, j] +" " ;
+                }
+                currentLine = currentLine + verticalWall;
+                Console.WriteLine(currentLine);
+            }
+
+            //alt duvar
+            Console.WriteLine(horizontalWall);
+
         }
 
 
