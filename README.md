@@ -18,7 +18,8 @@ Added a simgle ascii game called dungeon crawler. Currently it only allows movem
 It includes diffrent types of basic applications can be selected with user input and also a typo preventing system is being built for this application so it can midigate fat fingers like mine  :D
 
 ## ~~end of life for console  app1~~  
-Console app 1 is ended. 
+Console app 1 is ended.   
+In recap it can make simple  logical comparations and maths. It uses loops. It uses a hashmap for input controls and  has a ascii game that can be controlled  w a s d. It tries to gues your selection if you just write first few chars of given command. It also has a basic control mechnaism to prevent you fromm putting in string or chars where int is need.  It was a basic starter work  
 
 
 
