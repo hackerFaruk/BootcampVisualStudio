@@ -29,5 +29,5 @@ Uses better architecture much more inline with solid principles
 Aims of project :
 
 have better dungeon crawler 
-have better typo preventtaion
+have better typo preventtaion  
 have some waht data holding with either local or azure data base (  can 
