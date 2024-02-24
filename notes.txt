@@ -1,3 +1,19 @@
+genel vs ve csharp notları 
+
+
+VS kullanırkne ana proje dosyası yerine solution aç
+vs kullanırken seni rahtlartır
+shift f9 quick watch lets you see values of variables in vs 
+Aynı solutionda iki prje vermek istiyorsan 
+proje ekle sonra proje birden proje ikiye ulaşmak için proje bire ters tıkla add project refrence de vbve projeyi ekle ardından using diyerek proje namespacei ekle 
+namespacler porje özel olmalı 
+
+internal proje içi 
+public herkse acık solution içindeki
+private en kapalı 
+
+
+
 Console app 1 
 
 i have used dotnet cli to create a console app 
