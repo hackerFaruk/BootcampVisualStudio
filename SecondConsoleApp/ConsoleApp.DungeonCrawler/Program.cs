@@ -25,13 +25,16 @@ namespace ConsoleApp.DungeonCrawler
     public class dungeonCrawlerGame
     {
 
+
+
+        // game settings
         private static int heroX = 4;
         private static int heroY = 4;
-        private static int dungeonX = 7;
+        private static int dungeonX = 17;
         private static int dungeonY = 7;
 
         private static int[] heroPosition = [heroX, heroY];
-        private static int[] endPortalPositions = [dungeonX - 1, dungeonY - 1];
+        private static int[] endPortalPositions = [dungeonX - 2, dungeonY - 2];
 
 
 
@@ -41,29 +44,28 @@ namespace ConsoleApp.DungeonCrawler
         public static void dungeonCrawler()
         {
 
-            
+
             // it also consist gameplay currently but i want to add some systerm for it to  
-            movementControls();
+            movementControls() ;
 
         }
 
         /// <summary>
         ///  Developed hero controls. Now your hero cant move out of dungeon border 
         /// </summary>
-        /// <param name="heroX">Position you want  to place your hero at begining </param>
-        /// <param name="heroY"> Position you want  to place your hero at begining </param>
-        /// <param name="dungeonX"> Dungeon Size </param>
-        /// <param name="dungeonY">Dungeon Size </param>
-        internal static void movementControls(
-            int heroX = 4,
-            int heroY = 4,
-            int dungeonX = 7,
-            int dungeonY = 7
-        )
+       
+        internal static void movementControls()
         {
             // it has default values of 4 4 on hero location
             // in here wasd will be converted to hero location but it will also prevent moveing to walls
             // so if dungeon x*y  maks movement range 1 to x-1 and 1 to y-1
+
+
+       
+            int heroX = dungeonCrawlerGame.heroX;
+            int heroY = dungeonCrawlerGame.heroY;
+            int dungeonX = dungeonCrawlerGame.dungeonX;
+            int dungeonY = dungeonCrawlerGame.dungeonY;
 
             ConsoleKeyInfo cki;
 
@@ -188,15 +190,15 @@ namespace ConsoleApp.DungeonCrawler
         }
 
 
-        internal static void renderDungeon(int heroX =4, int heroY=4)
+        internal static void renderDungeon(int heroX = 4, int heroY = 4)
         {
             // it need to take matrice and print it on screen
 
             // Define the dimensions playable area inside dungeon
-            int rows = dungeonX-2;
-            int cols = dungeonY-2;
+            int rows = dungeonX - 2;
+            int cols = dungeonY - 2;
 
-            string horizontalWall = new string('-', dungeonX*2-1);
+            string horizontalWall = new string('-', dungeonX * 2 - 1);
             char verticalWall = '|';
 
             string currentLine = "";
@@ -206,7 +208,7 @@ namespace ConsoleApp.DungeonCrawler
             // Create a 2D array (matrix) with the specified dimensions
             char[,] dungeonSpace = new char[rows, cols];
 
-         
+
             // Initialize the matrix with '_' characters using nested loops
             for (int i = 0; i < rows; i++)
             {
@@ -222,8 +224,9 @@ namespace ConsoleApp.DungeonCrawler
             // herox dungeonx-1 heroy dungeon-1 en sağ alt köşe
 
 
-            dungeonSpace[ heroY-2, heroX - 2] = hero;
-            
+            dungeonSpace[heroX - 2, heroY - 2] = hero;
+           
+
 
 
 
@@ -234,12 +237,12 @@ namespace ConsoleApp.DungeonCrawler
             // get length 0 is rows 
             //get length 1 is cols 
 
-            for (int i = 0; i < dungeonSpace.GetLength(0); i++)
+            for (int j = 0; j < dungeonSpace.GetLength(1); j++)
             {
                 currentLine = "| ";
-                for (int j = 0; j < dungeonSpace.GetLength(1); j++)
+                for (int i = 0; i < dungeonSpace.GetLength(0); i++)
                 {
-                    currentLine = currentLine + dungeonSpace[i, j] +" " ;
+                    currentLine = currentLine + dungeonSpace[ i,j ] +" " ;
                 }
                 currentLine = currentLine + verticalWall;
                 Console.WriteLine(currentLine);
