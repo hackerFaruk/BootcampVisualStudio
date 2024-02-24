@@ -17,7 +17,7 @@ Added a simgle ascii game called dungeon crawler. Currently it only allows movem
 
 It includes diffrent types of basic applications can be selected with user input and also a typo preventing system is being built for this application so it can midigate fat fingers like mine  :D
 
-~~ end of life for console  app1  ~~
+~~end of life for console  app1~~  
 Console app 1 is ended. 
 
 
