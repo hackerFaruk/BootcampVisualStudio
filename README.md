@@ -3,8 +3,8 @@
 This repo  is list of my projects i made during my boot camp for MCSD training. 
 
 
-## Current work 
-Console app 1 is ended. 
+## Current work  (Here reprsents my current focus)
+Console app 1 is ended. and started second console app development 
 
 Second console app will use better architectture. developed version of dungeon crawler and typo preventation method 
 
