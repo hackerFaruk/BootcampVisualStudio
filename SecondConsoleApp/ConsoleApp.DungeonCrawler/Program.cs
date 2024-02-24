@@ -141,8 +141,8 @@ namespace ConsoleApp.DungeonCrawler
                     heroY = YMin;
 
 
-                printDungeon(heroX, heroY);
-                //renderDungeon(heroX, heroY);
+                //printDungeon(heroX, heroY);
+                renderDungeon(heroX, heroY);
             } while (cki.Key != ConsoleKey.Escape);
         }
 
@@ -222,10 +222,8 @@ namespace ConsoleApp.DungeonCrawler
             // herox dungeonx-1 heroy dungeon-1 en sağ alt köşe
 
 
-            dungeonSpace[heroX-1, heroY-1] = hero;
-            dungeonSpace[1, 1] = '1';
-            dungeonSpace[2, 2] = '2';
-            dungeonSpace[3, 3] = '3';
+            dungeonSpace[ heroY-2, heroX - 2] = hero;
+            
 
 
 
@@ -249,6 +247,7 @@ namespace ConsoleApp.DungeonCrawler
 
             //alt duvar
             Console.WriteLine(horizontalWall);
+            Console.WriteLine($"hero pos x: {heroX}    y: {heroY} ");
 
         }
 
