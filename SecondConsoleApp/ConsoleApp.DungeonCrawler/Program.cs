@@ -12,6 +12,7 @@ namespace ConsoleApp.DungeonCrawler
         static void Main(string[] args)
         {
             Console.WriteLine(appName);
+
             dungeonCrawlerGame.movementControls();
         }
     }
@@ -20,42 +21,18 @@ namespace ConsoleApp.DungeonCrawler
     {
         public static void dungeonCrawler()
         {
-            ConsoleKeyInfo cki;
+            // it also consist gameplay currently but i want to add some systerm for it to  
+            movementControls();
 
-            int heroX = 4;
-            int heroY = 4;
-
-            do
-            {
-                Console.WriteLine("Press the Escape (Esc) key to quit: \n");
-                cki = Console.ReadKey();
-                Console.Clear();
-                // since upper most line is zero this works a little diffrent in Y direction
-                if (cki.Key.ToString() == "W")
-                {
-                    heroY--;
-                }
-                else if (cki.Key.ToString() == "D")
-                {
-                    heroX++;
-                }
-                else if (cki.Key.ToString() == "S")
-                {
-                    heroY++;
-                }
-                else if (cki.Key.ToString() == "A")
-                {
-                    heroX--;
-                }
-                printDungeon(heroX, heroY);
-            } while (cki.Key != ConsoleKey.Escape);
         }
 
         /// <summary>
-        /// IT is a better movement coantrol scheme that can employ obstacle avoidance
+        ///  Developed hero controls. Now your hero cant move out of dungeon border 
         /// </summary>
-        /// <param name="heroX"> It holds horizontal position of hero </param>
-        /// <param name="heroY"> It holds vertical position of hero </param>
+        /// <param name="heroX">Position you want  to place your hero at begining </param>
+        /// <param name="heroY"> Position you want  to place your hero at begining </param>
+        /// <param name="dungeonX"> Dungeon Size </param>
+        /// <param name="dungeonY">Dungeon Size </param>
         internal static void movementControls(
             int heroX = 4,
             int heroY = 4,
