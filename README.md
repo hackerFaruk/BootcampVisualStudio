@@ -25,7 +25,10 @@ In recap it can make simple  logical comparations and maths. It uses loops. It u
 
 ## secondConsoleApp
 
-Uses better architecture much more inline with solid principles 
+Uses better architecture much more inline with solid principles    
+
+
+now your hero cant move out of dungeon in dungeon crawler ther is no escape 
 
 Aims of project :
 
