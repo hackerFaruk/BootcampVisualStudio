@@ -1,3 +1,5 @@
+Console app 1 
+
 i have used dotnet cli to create a console app 
 dotnet new console -n MyAppName
 
@@ -17,3 +19,11 @@ this : refers to instance when object is maded from given class
 
 public : you can call this method from diffrent files in same namespace or assembly
 private : you cant call from outside
+
+
+Console App 2 
+
+Aynı solutionda iki prje vermek istiyorsan 
+proje ekle sonra proje birden proje ikiye ulaşmak için proje bire ters tıkla add project refrence de vbve projeyi ekle ardından using diyerek proje namespacei ekle 
+namespacler porje özel olmalı 
+
