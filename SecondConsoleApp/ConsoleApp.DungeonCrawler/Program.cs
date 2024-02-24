@@ -55,6 +55,12 @@ namespace ConsoleApp.DungeonCrawler
         }
 
 
+
+        /// <summary>
+        /// IT is a better movement coantrol scheme that can employ obstacle avoidance
+        /// </summary>
+        /// <param name="heroX"> It holds horizontal position of hero </param>
+        /// <param name="heroY"> It holds vertical position of hero </param>
         internal static void movementControls(int heroX =4 ,int heroY=4 ) {
             // it has default values of 4 4 on hero location 
             // in here wasd will be converted to hero location but it will also prevent moveing to walls 

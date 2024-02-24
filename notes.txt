@@ -12,9 +12,13 @@ internal proje içi
 public herkse acık solution içindeki
 private en kapalı 
 
+Eğer method üzerine /// atarsanm otomatik açıoklama yazmana izin verir
 
 
-Console app 1 
+overloada izin var csharpta en sevdiğim xd
+
+
+Console app 1
 
 i have used dotnet cli to create a console app 
 dotnet new console -n MyAppName
