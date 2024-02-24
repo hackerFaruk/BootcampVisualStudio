@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+
+namespace ConsoleApp.Start
+{
+    internal class Program
+    {
+
+        private static string appName = " Thats Second Version of My app";
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(appName);
+            
+
+        }
+    }
+
+
+
+    
+
+
+}
