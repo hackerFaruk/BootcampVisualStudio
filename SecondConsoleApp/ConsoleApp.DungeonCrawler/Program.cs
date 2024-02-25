@@ -8,8 +8,6 @@ namespace ConsoleApp.DungeonCrawler
 
  
 
-
-
     internal class Program
     {
         private static string appName = " This is Dungeon Crawlerr";
@@ -28,16 +26,15 @@ namespace ConsoleApp.DungeonCrawler
 
 
         // game settings
-        private static int heroX = 4;
-        private static int heroY = 4;
-        private static int dungeonX = 17;
-        private static int dungeonY = 7;
-
-        private static int[] heroPosition = [heroX, heroY];
-        private static int[] endPortalPositions = [dungeonX - 2, dungeonY - 2];
+        internal static int heroX = 4;
+        internal static int heroY = 4;
+        internal static int dungeonX = 17;
+        internal static int dungeonY = 17;
+        internal static int pointsMem = 0;
 
 
-
+        internal static int[] heroPosition = [heroX, heroY];
+        internal static int[] endPortalPositions = [dungeonX - 2, dungeonY - 2];
 
 
 
@@ -77,11 +74,11 @@ namespace ConsoleApp.DungeonCrawler
                 { "D", 4 },
             };
 
-            int XMin = 2; // due to wall being in zero
-            int XMax = dungeonX - 1;
+            int XMin = 1; // due to wall being in zero
+            int XMax = dungeonX - 2;
 
-            int YMax = dungeonY - 1;
-            int YMin = 2;
+            int YMax = dungeonY - 2;
+            int YMin = 1;
 
             string key;
             int command;
@@ -195,10 +192,10 @@ namespace ConsoleApp.DungeonCrawler
             // it need to take matrice and print it on screen
 
             // Define the dimensions playable area inside dungeon
-            int rows = dungeonX - 2;
-            int cols = dungeonY - 2;
+            int rows = dungeonCrawlerGame.dungeonX - 2;
+            int cols = dungeonCrawlerGame.dungeonY - 2;
 
-            string horizontalWall = new string('-', dungeonX * 2 - 1);
+            string horizontalWall = new string('-', dungeonCrawlerGame.dungeonX * 2 - 1);
             char verticalWall = '|';
 
             string currentLine = "";
@@ -223,9 +220,11 @@ namespace ConsoleApp.DungeonCrawler
             // herox 2 heroy 2 en sol üst köşe
             // herox dungeonx-1 heroy dungeon-1 en sağ alt köşe
 
-
-            dungeonSpace[heroX - 2, heroY - 2] = hero;
            
+
+            dungeonSpace[ heroX - 1, heroY - 1] = hero;
+
+          
 
 
 
@@ -247,10 +246,11 @@ namespace ConsoleApp.DungeonCrawler
                 currentLine = currentLine + verticalWall;
                 Console.WriteLine(currentLine);
             }
-
+            
             //alt duvar
             Console.WriteLine(horizontalWall);
             Console.WriteLine($"hero pos x: {heroX}    y: {heroY} ");
+            Console.WriteLine( heroPosition);
 
         }
 
