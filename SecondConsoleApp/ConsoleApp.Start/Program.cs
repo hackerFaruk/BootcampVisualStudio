@@ -42,6 +42,7 @@ namespace ConsoleApp.Start
         static void nameChechker()
         {
 
+            // ctrl k s yapıp zınk diye yazım koddu 
             for (int i = 0; i < 3; i++)
             {
 

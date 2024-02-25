@@ -1,6 +1,8 @@
 genel vs ve csharp notları 
 
 ctrl k s  yapınca bloğu bişile sarmana izin verir 
+ctrl k c toplu yorum yapar 
+ctrl k u toplu yorum açar 
 
 VS kullanırkne ana proje dosyası yerine solution aç
 vs kullanırken seni rahtlartır
