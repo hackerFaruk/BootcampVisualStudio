@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using ConsoleApp.DungeonCrawler; //  porjeme ters tıklayıp add project refrence diyince usingde öneri olarak geldi bu
 
@@ -65,16 +66,35 @@ namespace ConsoleApp.Start
 
 
 
-            // unlike python csharp need s some speciality to append 
+         
+        }
+
+
+
+        static void stringMakerStudio()
+        {
+            // unlike python csharp need s some speciality to append
+            // basically it is a linked list 
 
             StringBuilder myStringBuilder = new StringBuilder("Hello World!");
             Console.WriteLine(myStringBuilder);
-            myStringBuilder.Append(" What a beautiful day.");
+            myStringBuilder.Append(" What a beautiful day!");
             Console.WriteLine(myStringBuilder);
-            myStringBuilder.Append(" What a beautiful day.");
+            myStringBuilder.Append(" What a beautiful day!");
+            Console.WriteLine(myStringBuilder);
+
+            // bu append line işine bi bak hacım ya o yürümedi 
+            myStringBuilder.AppendLine(" What a beautiful day.");
+            Console.WriteLine(myStringBuilder.ToString());
+
+
+            myStringBuilder.Remove(5, 7);
             Console.WriteLine(myStringBuilder);
 
 
+            myStringBuilder.Replace('!', '?');
+            Console.WriteLine(myStringBuilder);
+           
         }
     }
 }
