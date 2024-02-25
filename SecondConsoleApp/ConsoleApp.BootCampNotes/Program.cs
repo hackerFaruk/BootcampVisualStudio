@@ -30,8 +30,8 @@ namespace ConsoleApp.BootCampNotes
         };
 
         static void Main(string[] args) {
-            int havalıNumero= dayNum();
-            dayNum(havalıNumero);
+            
+            numGen();
 
         }
 
@@ -80,5 +80,20 @@ namespace ConsoleApp.BootCampNotes
                     break;
             }
         }
+
+
+        static void numGen()
+        {
+            int say;
+            for (int i = 0; i < 10; i++)
+            {
+                Random randomObj = new Random();
+
+                say=randomObj.Next(100, 200);
+                Console.WriteLine(say);
+            }
+        }
+
+
     }
 }
