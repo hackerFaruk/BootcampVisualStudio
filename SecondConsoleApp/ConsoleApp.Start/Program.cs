@@ -41,28 +41,35 @@ namespace ConsoleApp.Start
         /// </summary>
         static void nameChechker()
         {
-            Console.WriteLine("bi isim giriniz ");
 
-            string isimInput = Console.ReadLine();
-
-            if (isimInput.Length > 7)
+            for (int i = 0; i < 3; i++)
             {
-                Console.Beep();
-                Console.WriteLine("isimin cok uzun ben  sana ke diycem");
-                Console.Beep();
-            }
-            else if (isimInput == "alp")
-            {
-                Console.WriteLine("sen ben misin");
-            }
-            else
-            {
-                Console.WriteLine("akılda turması kolay isim");
-            }
+
+                Console.WriteLine("bi isim giriniz ");
+
+                string isimInput = Console.ReadLine();
+
+                if (isimInput == "") { Console.WriteLine("iisim girmeyene loop yok agaaa breaktım gittim bb "); break; }
+
+                if (isimInput.Length > 7)
+                {
+                    Console.Beep();
+                    Console.WriteLine("isimin cok uzun ben  sana ke diycem");
+                    Console.Beep();
+                }
+                else if (isimInput == "alp")
+                {
+                    Console.WriteLine("sen ben misin");
+                }
+                else
+                {
+                    Console.WriteLine("akılda turması kolay isim");
+                }
 
 
-            isimInput=isimInput.Remove(0,1);
-            Console.WriteLine(isimInput);
+                isimInput = isimInput.Remove(0, 1);
+                Console.WriteLine(isimInput); 
+            }
 
 
 
