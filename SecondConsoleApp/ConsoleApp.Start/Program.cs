@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using ConsoleApp.DungeonCrawler; //  porjeme ters tıklayıp add project refrence diyince usingde öneri olarak geldi bu
 
 // DungeonCrawler game içindeki dungeon crawler static olduğu için objesisz çağırıyom
@@ -57,6 +58,23 @@ namespace ConsoleApp.Start
             {
                 Console.WriteLine("akılda turması kolay isim");
             }
+
+
+            isimInput=isimInput.Remove(0,1);
+            Console.WriteLine(isimInput);
+
+
+
+            // unlike python csharp need s some speciality to append 
+
+            StringBuilder myStringBuilder = new StringBuilder("Hello World!");
+            Console.WriteLine(myStringBuilder);
+            myStringBuilder.Append(" What a beautiful day.");
+            Console.WriteLine(myStringBuilder);
+            myStringBuilder.Append(" What a beautiful day.");
+            Console.WriteLine(myStringBuilder);
+
+
         }
     }
 }
