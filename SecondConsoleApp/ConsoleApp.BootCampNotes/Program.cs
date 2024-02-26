@@ -31,7 +31,7 @@ namespace ConsoleApp.BootCampNotes
 
         static void Main(string[] args) {
             
-            numGen();
+            stringSwitch();
 
         }
 
@@ -92,6 +92,24 @@ namespace ConsoleApp.BootCampNotes
                 say=randomObj.Next(100, 200);
                 Console.WriteLine(say);
             }
+        }
+
+        static void stringSwitch(){
+            System.Console.WriteLine(" selam ya da melam yaz");
+            string ans = Console.ReadLine();
+            switch(ans){
+                case "melam":
+                    System.Console.WriteLine("melamın meleyküm");
+                    break;
+                case "selam":
+                    System.Console.WriteLine("as kanka");
+                    break;
+                default:
+                System.Console.WriteLine("sanki bi typo olduk be ");
+                break;
+            }
+
+
         }
 
 
