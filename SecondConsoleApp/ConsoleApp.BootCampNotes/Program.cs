@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
+using coolName; // add namesapce 
 
 namespace ConsoleApp.BootCampNotes
 {
@@ -31,8 +32,7 @@ namespace ConsoleApp.BootCampNotes
 
         static void Main(string[] args) {
             
-            stringSwitch();
-
+            coolName.coolEnums.ain();
         }
 
         // i am gonna overloead that witch
