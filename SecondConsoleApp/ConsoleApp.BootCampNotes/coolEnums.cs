@@ -17,6 +17,7 @@
     {
       Level myVar = Level.Medium;
       Console.WriteLine(myVar);
+      Level mySecondVar = Level.High;
     }
 
 
