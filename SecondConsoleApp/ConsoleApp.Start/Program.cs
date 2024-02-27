@@ -14,7 +14,7 @@ namespace ConsoleApp.Start
     {
         internal static Dictionary<int, string> opertaionsList = new Dictionary<int, string>();
 
-        private static string appName = " Thats Second Version of My app";
+        private static string appName = " Thats Second Version of My App";
 
         static void Main(string[] args)
         {
