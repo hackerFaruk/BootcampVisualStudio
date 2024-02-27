@@ -69,12 +69,12 @@ namespace ConsoleApp.Start
 
 
                 isimInput = isimInput.Remove(0, 1);
-                Console.WriteLine(isimInput); 
+                Console.WriteLine(isimInput);
             }
 
 
 
-         
+
         }
 
 
@@ -102,7 +102,7 @@ namespace ConsoleApp.Start
 
             myStringBuilder.Replace('!', '?');
             Console.WriteLine(myStringBuilder);
-           
+
         }
     }
 }
