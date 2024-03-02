@@ -50,8 +50,7 @@ namespace ConsoleApp.BootCampNotes.Array
             // sayilar[sayilar.lenth -1 ] son eleman
             Console.WriteLine(myNum[myNum.Length-1]);
 
-            ListLister();
-            learnMethos();
+            learnNullables();
           
         }
 
@@ -66,6 +65,25 @@ namespace ConsoleApp.BootCampNotes.Array
             foreach (string i in spell) {  Console.WriteLine(i); }
 
 
+        }
+
+
+        static void learnNullables()
+        {
+            //  si keskin  diilinde sayısal deeğerler null olmaz default değerleri sıfırdır
+            int[] numx;
+            numx = new int[2];
+            Console.WriteLine(numx[1]);
+            // sıfırı yazar null değer almaz çünkü int 
+
+            int? myNullableint= null;
+            // soru işareti koyunca nullable oldu bak 
+            Console.WriteLine("here is my null val:");
+            Console.WriteLine(myNullableint);
+
+            int?[] myNuılalbleintarr = new int?[2];
+            Console.WriteLine("here is my null val:");
+            Console.WriteLine(myNuılalbleintarr[1]);
         }
 
     }
