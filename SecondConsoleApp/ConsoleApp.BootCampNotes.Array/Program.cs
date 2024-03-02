@@ -114,5 +114,17 @@ namespace ConsoleApp.BootCampNotes.Array
 
         }
 
+        static  void doubleQuestionMark()
+        {
+            // ?? 
+            // The Null Coalescing Operator (??)
+            // is a binary operator that returns the left-hand operand if it is not null;
+            // otherwise, it returns the right-hand operand.
+            // bu şu demek x ?? y eğer x null değilse x al eğer x null ise y al
+
+            string data = null;
+            string lastData = data ?? "new data ";
+        }
+
     }
 }
