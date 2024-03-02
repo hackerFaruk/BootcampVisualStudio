@@ -13,12 +13,13 @@
       Medium,
       High
     }
-    static void enumLister()
+    public static void enumLister()
     {
       Level myVar = Level.Medium;
       Console.WriteLine(myVar);
-      Level mySecondVar = Level.High;
-    }
+      int myNum = (int)Level.High;
+      Console.WriteLine(myNum);
+        }
 
 
   }
