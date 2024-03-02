@@ -50,7 +50,7 @@ namespace ConsoleApp.BootCampNotes.Array
             // sayilar[sayilar.lenth -1 ] son eleman
             Console.WriteLine(myNum[myNum.Length-1]);
 
-            learnNullables();
+            coolOneLiner(3);
           
         }
 
@@ -84,6 +84,31 @@ namespace ConsoleApp.BootCampNotes.Array
             int?[] myNuılalbleintarr = new int?[2];
             Console.WriteLine("here is my null val:");
             Console.WriteLine(myNuılalbleintarr[1]);
+        }
+
+
+        static void OrAndCombo()
+        {
+
+            if( true & (true || false))
+            {
+                Console.WriteLine("koşulları parantezle kombolomak mümkün");
+            }
+        }
+
+
+        static void coolOneLiner(int num)
+        {
+            string result = "";
+
+            result = (num % 2 == 0) ? "çifttir" : "tektir";
+
+            Console.WriteLine(result);
+
+            int[] numbers = { 2, 3, 4, 5 };
+            var squaredNumbers = numbers.Select(x => x * num);
+            Console.WriteLine(string.Join(" ", squaredNumbers));
+
         }
 
     }
