@@ -109,6 +109,9 @@ namespace ConsoleApp.BootCampNotes.Array
             var squaredNumbers = numbers.Select(x => x * num);
             Console.WriteLine(string.Join(" ", squaredNumbers));
 
+
+            Console.WriteLine((num % 2 == 0) ? "çifttir" : "tektir");
+
         }
 
     }
