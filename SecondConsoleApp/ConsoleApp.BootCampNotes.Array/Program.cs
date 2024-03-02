@@ -51,9 +51,22 @@ namespace ConsoleApp.BootCampNotes.Array
             Console.WriteLine(myNum[myNum.Length-1]);
 
             ListLister();
+            learnMethos();
           
         }
 
+
+        static void learnMethos()
+        {
+            string name = "hallo-mein-name-ist";
+
+            string[] spell = name.Split('-'); // split by - 
+
+            for (int i  = 0; i < spell.Length; i++) { Console.WriteLine(spell[i]); }
+            foreach (string i in spell) {  Console.WriteLine(i); }
+
+
+        }
 
     }
 }
