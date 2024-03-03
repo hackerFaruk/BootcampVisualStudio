@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp.BootCampNotes.Array
 {
@@ -51,7 +52,8 @@ namespace ConsoleApp.BootCampNotes.Array
             //Console.WriteLine(myNum[myNum.Length-1]);
 
             //coolOneLiner(3);
-            winnerofThree();
+            //winnerofThree();
+            variableArrayCount();
         }
 
 
@@ -172,5 +174,46 @@ namespace ConsoleApp.BootCampNotes.Array
             }
 
         }
+    
+        static void variableArrayCount()
+        {
+
+            // rastgele sayıda array üretip tutmak için 
+
+            var rand = new Random();
+
+            int arraycount = rand.Next(2,5);
+            
+
+            int[] randomNumbers = new int[arraycount];
+
+            ArrayList allNumbers = new ArrayList();
+
+            for (int i = 0; i < arraycount; i++)
+            {
+                for (int j = 0; j < arraycount; j++)
+                {
+                    randomNumbers[j] = rand.Next();
+                }
+                allNumbers.Add(randomNumbers);
+            }
+
+
+            int counter = 0;
+            foreach(int[] item in allNumbers)
+            {
+                Console.WriteLine($"array num {counter}");
+                counter++;
+                Console.WriteLine("array içeriği");
+                
+                foreach(int i in item)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+
+        }
+    
     }
 }
