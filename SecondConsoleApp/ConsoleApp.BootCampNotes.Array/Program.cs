@@ -193,7 +193,7 @@ namespace ConsoleApp.BootCampNotes.Array
             {
                 for (int j = 0; j < arraycount; j++)
                 {
-                    randomNumbers[j] = rand.Next();
+                    randomNumbers[j] = rand.Next(100);
                 }
                 allNumbers.Add(randomNumbers);
             }
@@ -211,7 +211,7 @@ namespace ConsoleApp.BootCampNotes.Array
                     Console.WriteLine(i);
                 }
             }
-
+            
 
         }
     
