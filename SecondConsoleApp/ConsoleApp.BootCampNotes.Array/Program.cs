@@ -48,10 +48,10 @@ namespace ConsoleApp.BootCampNotes.Array
         static void Main(string[] args)
         {
             // sayilar[sayilar.lenth -1 ] son eleman
-            Console.WriteLine(myNum[myNum.Length-1]);
+            //Console.WriteLine(myNum[myNum.Length-1]);
 
-            coolOneLiner(3);
-          
+            //coolOneLiner(3);
+            winnerofThree();
         }
 
 
@@ -126,5 +126,51 @@ namespace ConsoleApp.BootCampNotes.Array
             string lastData = data ?? "new data ";
         }
 
+
+
+        static void winnerofThree()
+        {
+            var rand = new Random();
+
+            int tug=rand.Next(200);
+            Console.WriteLine($"Tug değeri {tug}");
+
+            int esr = rand.Next(200);
+            Console.WriteLine($"Esr değeri {esr}");
+
+            int kasa = rand.Next(200);
+            Console.WriteLine($"Kasa değeri {kasa}");
+
+
+            int maxVal = 0;
+            int maxPos = 0;
+
+            int[] values = {tug, esr, kasa};
+
+            for (int i = 0; i < values.Length; i++)
+            {
+               if (values[i] > maxVal)
+                {
+                    maxVal = values[i];
+                    maxPos = i;
+                }
+            }
+
+
+            switch(maxPos)
+            {
+                case 0:
+                    Console.WriteLine("Tug kazanır");
+                break;
+                case 1:
+                    Console.WriteLine("Esr kazanır");
+                break;
+                case 2:
+                    Console.WriteLine("Kasa kazanır");
+                break;
+
+            }
+
+        }
     }
 }
