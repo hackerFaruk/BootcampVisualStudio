@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 
 namespace ConsoleApp.BootCampNotes.Array
@@ -53,7 +54,8 @@ namespace ConsoleApp.BootCampNotes.Array
 
             //coolOneLiner(3);
             //winnerofThree();
-            variableArrayCount();
+            //variableArrayCount();
+            groupMaker();
         }
 
 
@@ -217,5 +219,55 @@ namespace ConsoleApp.BootCampNotes.Array
 
         }
     
+
+        static void groupMaker()
+        {
+            string[] allPeople = { "a", "b", "c", "d", "e", "f", "g", "h" };
+            int teamSize = allPeople.Length / 2;
+            string[] team1 = new string[teamSize];
+            string[] team2 = new string[teamSize];
+
+            Random numgen = new Random();
+           
+            int pull = 0;
+
+            // making of group one 
+            for (int i = 0;i < teamSize ; i++)
+            {
+              pull = numgen.Next(teamSize);
+
+              if(allPeople[pull] != "x")
+                {
+                    team1[i] = allPeople[pull];
+                    allPeople[pull] = "x";
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            // making team two
+            int counter = 0;
+
+            foreach (string i in allPeople) {
+                if (i != "x")
+                {
+                    team2[counter] = i;
+                    counter++;
+                }
+            }
+
+
+
+            Console.WriteLine("team1");
+            foreach(string i in team1) { Console.WriteLine(i); }
+
+            Console.WriteLine("********");
+            Console.WriteLine("team2");
+            foreach (string i in team2) { Console.WriteLine(i); }
+        }
+
+
     }
 }
