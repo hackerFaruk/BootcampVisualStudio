@@ -32,7 +32,7 @@ namespace ConsoleApp.BootCampNotes
 
         static void Main(string[] args) {
             
-            coolName.coolEnums.enumLister();
+            coolName.coolEnums.enumLister();""
         }
 
         // i am gonna overloead that witch
