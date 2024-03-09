@@ -1,5 +1,10 @@
 genel vs ve csharp notları 
 
+
+cd path/to/solution/directory
+dotnet run MyProject/MyProject.csproj
+Replace path/to/solution/directory with the actual path to your solution directory and MyProject/MyProject.csproj with the path to your project file.
+
 ctrl k s  yapınca bloğu bişile sarmana izin verir 
 ctrl k c toplu yorum yapar 
 ctrl k u toplu yorum açar 
