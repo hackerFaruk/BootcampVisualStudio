@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+        public static int counter = 0;
         static void Main(string[] args)
         {
             Person mahmut = new Person();
@@ -17,9 +18,16 @@
             for(int i = 0; i < 10; i++) {
                 
                 Person memoli = new Person();
-               GC.Collect();
+              
             }
+            // GArbage collector cağırak çop toplamyı istedik her toplama counter arttırdı
+            // ancak kod çok hızlı yürüdüğü için sayacaı göremedik 
+            // console ready key bize bekleme şansı verdi
+            GC.Collect();
+            Console.WriteLine(counter);
             Console.ReadKey();
+            Console.WriteLine(counter);
+
         }
     }
 
@@ -40,10 +48,12 @@
 
         ~Person()
         {
+            Program.counter++;
             Console.WriteLine($"Destructor was called for {Name} Person .");
         }
         public void Salut()
         {
+
             Console.WriteLine($"hello i am {Name}");
         }
 
