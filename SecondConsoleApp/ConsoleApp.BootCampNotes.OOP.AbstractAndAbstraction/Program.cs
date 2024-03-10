@@ -34,6 +34,7 @@
     internal class ForkliftWorker : BasicWorker
     {
         // eğer abstractta istenen methodları yazmasan hata verir 
+        // abstract emthodları override ata ata yazdık hepsi var artık
 
         public  override double  CalculatePayment()
         {
