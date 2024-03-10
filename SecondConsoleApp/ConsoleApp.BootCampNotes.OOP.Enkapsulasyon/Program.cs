@@ -57,6 +57,7 @@ namespace ConsoleApp.BootCampNotes.OOP.Enkapsulasyon
 
 
 
+            // fonksiyonlar private ama public func ile dışarda bu  şekil kullanıma izin var
             private void RevEngine()
             {
                 Console.WriteLine("wroom wroom");
