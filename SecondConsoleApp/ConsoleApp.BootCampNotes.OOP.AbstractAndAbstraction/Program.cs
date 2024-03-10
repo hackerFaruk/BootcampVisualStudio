@@ -51,7 +51,8 @@
         public override string Report(
             )
         { Console.WriteLine(" reporting for duty");
-        return "daily report"}
+            return "daily report";
+        }
 
 
     }
