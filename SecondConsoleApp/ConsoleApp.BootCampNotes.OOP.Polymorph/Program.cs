@@ -6,12 +6,23 @@
         {
             SmsNotification yeniMesaj = new SmsNotification();
             EmailNotification yeniMail = new EmailNotification();
+            Notification yeniNotfi = new Notification();    
 
             yeniMail.History();
             yeniMesaj.Call();
             yeniMail.SendNotification("habeer");
             yeniMail.SecretNotKeeper(); // private clasla yaptığı işlemi dışarı vermek için publica 
-            
+
+            Notification[] allNotfis = new Notification[3];
+            allNotfis[0] = yeniMail;
+            allNotfis[1] = yeniMesaj;
+            allNotfis[2] = yeniNotfi;
+
+
+            foreach (Notification item in allNotfis)
+            {
+                Console.WriteLine("Hepsi base claslarına göre muamel alabilir");
+            }
 
         }
     }
