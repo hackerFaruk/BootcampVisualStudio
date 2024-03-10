@@ -47,13 +47,19 @@ namespace NPATGame
 
         Random rand = new Random();
 
+        /// <summary>
+        /// This Method Allows You Select a Letter For Game and Stroes it in to Letter
+        /// </summary>
         internal void SelectLetter()
         {
             int randomNumber = rand.Next(letterAmount);
             Letter = possibleChars[randomNumber];
         }
 
-        internal void getPlayerCount()
+        /// <summary>
+        /// This method gets amount of players and stores it in playerCount
+        /// </summary>
+        internal void GetPlayerCount()
         {
             Console.WriteLine("Oyuna Başlamadan Önce Lütfen Kaç kişi");
             playerCount = ReadIntFromConsole();
@@ -65,6 +71,10 @@ namespace NPATGame
             }
         }
 
+        /// <summary>
+        /// This function ensures an integer is read from console if not return 0
+        /// </summary>
+        /// <returns> int  IntFromConsole </returns>
         internal int ReadIntFromConsole()
         {
             string? read = Console.ReadLine();
@@ -87,5 +97,10 @@ namespace NPATGame
 
             return result;
         }
+    
+
+       
+        internal string[] GetPlayerNames() { }
+
     }
 }
