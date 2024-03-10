@@ -10,6 +10,8 @@
             yeniMail.History();
             yeniMesaj.Call();
             yeniMail.SendNotification("habeer");
+            yeniMail.SecretNotKeeper(); // private clasla yaptığı işlemi dışarı vermek için publica 
+            
 
         }
     }
@@ -41,6 +43,17 @@
         public override void SendNotification(string data)
         {
             Console.WriteLine("Internet Çağı Haberiiii");
+        }
+
+        private string SecretKeeper()
+        {
+            Console.WriteLine("bu sırdı");
+
+            return "sır";
+        }
+        public void SecretNotKeeper()
+        {
+            Console.WriteLine(SecretKeeper());
         }
     }
 }
