@@ -41,9 +41,11 @@ namespace NPATGame
             'z'
         };
 
-        public int letterAmount = possibleChars.Length;
+        static string[] turns = { "Name", "Place", "Animal", "Thing" };
 
-        int playerCount = 0;
+        int letterAmount = possibleChars.Length;
+
+        static int playerCount = 0;
 
         Random rand = new Random();
 
@@ -97,10 +99,32 @@ namespace NPATGame
 
             return result;
         }
-    
 
-       
-        internal string[] GetPlayerNames() { }
+        /// <summary>
+        ///  gets user names from console and returns an array of names
+        /// </summary>
+        /// <returns>  resturns array of user names </returns>
+        internal string[] GetPlayerNames()
+        {
+            string?[] memorizer = new string[playerCount];
 
+            Console.Clear();
+
+            for (int i = 0; i < playerCount; i++)
+            {
+                Console.WriteLine($"Oyuncu {i + 1} için isim giriniz");
+                memorizer[i] = Console.ReadLine();
+                Console.Clear();
+            }
+
+            return memorizer;
+        }
+
+        public void Play()
+        {
+            SelectLetter();
+            GetPlayerCount();
+            GetPlayerNames();
+        }
     }
 }
