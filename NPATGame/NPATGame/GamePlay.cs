@@ -120,6 +120,16 @@ namespace NPATGame
             return memorizer;
         }
 
+        internal Player[] CreatePlayers()
+        {
+            Player[] playerList = new Player[playerCount];
+
+
+
+
+        }
+
+
         public void Play()
         {
             SelectLetter();
