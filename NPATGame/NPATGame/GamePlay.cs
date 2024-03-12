@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http.Headers;
@@ -14,9 +15,7 @@ namespace NPATGame
 
         internal int CurrentStage = 0;
 
-        internal string[] StageNames = { "Name", "Place", "Animal", "Thing" };
-
-
+        internal string[] stageNames = { "İsim", "Yer", "Hayvan", "Eşya" };
 
         public static char[] possibleChars =
         {
@@ -79,6 +78,8 @@ namespace NPATGame
                 return;
             }
         }
+
+
 
         /// <summary>
         /// This function ensures an integer is read from console if not return 0
@@ -146,26 +147,38 @@ namespace NPATGame
             Console.WriteLine("NPAT Game is about to start");
             Console.WriteLine("WWhen you are ready press any key ");
             Console.ReadKey();
+            Console.Clear();
         }
 
+        internal void StageManager(Player[] playerList)
+        {
+            foreach (string stage in stageNames)
+            {
 
-        internal void NameStage() {
-            Console.WriteLine("Bu tur bir isim vermeniz lazım ");
-            Console.WriteLine($"Seçili Harf {Letter}");
+               
+                for (int i = 0; i < playerList.Length; i++)
+                { 
 
-
-
+                Console.WriteLine($"Seçili Harf {Letter}");
+                Console.WriteLine(
+                    $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
+                );
+                    Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, ceavbını yaz ve entera bas");
+               
         }
 
+            }
+        }
 
         public void Play()
         {
             SelectLetter();
             GetPlayerCount();
-            string[] playerNames = GetPlayerNames();
+          
+
+           string[] playerNames = GetPlayerNames();
             Player[] playerList = CreatePlayers(playerNames);
             StartGame();
-
         }
     }
 }
