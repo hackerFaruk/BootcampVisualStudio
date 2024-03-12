@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,13 @@ namespace NPATGame
 {
     internal class GamePlay
     {
-        public char Letter;
+        internal char Letter;
+
+        internal int CurrentStage = 0;
+
+        internal string[] StageNames = { "Name", "Place", "Animal", "Thing" };
+
+
 
         public static char[] possibleChars =
         {
@@ -120,10 +127,31 @@ namespace NPATGame
             return memorizer;
         }
 
-        internal Player[] CreatePlayers()
+        internal Player[] CreatePlayers(string[] playerNames)
         {
             Player[] playerList = new Player[playerCount];
 
+            for (int i = 0; i < playerCount; i++)
+            {
+                playerList[i] = new Player();
+                playerList[i].name = playerNames[i];
+            }
+
+            return playerList;
+        }
+
+        internal void StartGame()
+        {
+            Console.Clear();
+            Console.WriteLine("NPAT Game is about to start");
+            Console.WriteLine("WWhen you are ready press any key ");
+            Console.ReadKey();
+        }
+
+
+        internal void NameStage() {
+            Console.WriteLine("Bu tur bir isim vermeniz lazım ");
+            Console.WriteLine($"Seçili Harf {Letter}");
 
 
 
@@ -134,7 +162,10 @@ namespace NPATGame
         {
             SelectLetter();
             GetPlayerCount();
-            GetPlayerNames();
+            string[] playerNames = GetPlayerNames();
+            Player[] playerList = CreatePlayers(playerNames);
+            StartGame();
+
         }
     }
 }

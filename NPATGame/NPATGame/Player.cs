@@ -8,6 +8,8 @@ namespace NPATGame
 {
     internal class Player
     {
+
+
         public string name { get; set; } = "Default_Name";
         public int point = 0;
 
