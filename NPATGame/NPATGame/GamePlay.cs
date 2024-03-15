@@ -165,7 +165,12 @@ namespace NPATGame
                     Console.WriteLine(
                         $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
                     );
-                    Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, ceavbını yaz ve entera bas");
+                    Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, cevabını yaz ve entera bas");
+                    // read answers and assign them in to a table here 
+
+
+                    // then just calculate points by table and declare thems
+
 
                 }
 
