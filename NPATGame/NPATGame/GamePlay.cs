@@ -69,7 +69,7 @@ namespace NPATGame
         /// </summary>
         internal void GetPlayerCount()
         {
-            Console.WriteLine("Oyuna Başlamadan Önce Lütfen Kaç kişi");
+            Console.WriteLine("Youncu sayısı giriniz");
             playerCount = ReadIntFromConsole();
 
             if (playerCount == 0)
@@ -155,17 +155,17 @@ namespace NPATGame
             foreach (string stage in stageNames)
             {
 
-               
-                for (int i = 0; i < playerList.Length; i++)
-                { 
 
-                Console.WriteLine($"Seçili Harf {Letter}");
-                Console.WriteLine(
-                    $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
-                );
+                for (int i = 0; i < playerList.Length; i++)
+                {
+
+                    Console.WriteLine($"Seçili Harf {Letter}");
+                    Console.WriteLine(
+                        $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
+                    );
                     Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, ceavbını yaz ve entera bas");
-               
-        }
+
+                }
 
             }
         }
@@ -174,9 +174,9 @@ namespace NPATGame
         {
             SelectLetter();
             GetPlayerCount();
-          
 
-           string[] playerNames = GetPlayerNames();
+
+            string[] playerNames = GetPlayerNames();
             Player[] playerList = CreatePlayers(playerNames);
             StartGame();
         }
