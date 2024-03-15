@@ -11,13 +11,13 @@ namespace NPATGame
     internal class answerTable
     {
 
-        string[]? nameStage = null;
-        string[]? placeStage = null;
-        string[]? animalStage = null;
-        string[]? thingStage = null;
+        string[] nameStage = [];
+        string[] placeStage = [];
+        string[] animalStage = [];
+        string[] thingStage = [];
 
         int[] playerPoints = [];
-        string[]?[] allAnswers = new string[]?[4];
+        string[][] allAnswers = new string[4][];
 
         int player_count;
 
@@ -25,8 +25,13 @@ namespace NPATGame
         public answerTable(int player_num)
         {
             player_count = player_num;
+            this.allAnswers[0] = nameStage;
+            this.allAnswers[1] = placeStage;
+            this.allAnswers[2] = animalStage;
+            this.allAnswers[3] = thingStage;
 
-            string[]?[] allAnswers = { nameStage, placeStage, animalStage, thingStage };
+
+
 
             for (int i = 0; i < 4; i++)
             {
@@ -38,6 +43,11 @@ namespace NPATGame
                 playerPoints[i] = 0;
             }
 
+        }
+
+        public void assignAnswer(int stage, int player, string answer)
+        {
+            allAnswers[stage][player] = answer;
         }
         public int[] calculatePoints()
         {

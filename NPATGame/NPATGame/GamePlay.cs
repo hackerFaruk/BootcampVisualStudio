@@ -154,9 +154,13 @@ namespace NPATGame
 
         internal void StageManager(Player[] playerList)
         {
-            foreach (string stage in stageNames)
-            {
 
+            answerTable answerTable = new answerTable(playerCount);
+            string input = "";
+
+            for (int j = 0; j < 4; j++)
+            {
+                string stage = turns[j];
 
                 for (int i = 0; i < playerList.Length; i++)
                 {
@@ -167,13 +171,19 @@ namespace NPATGame
                     );
                     Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, cevabını yaz ve entera bas");
                     // read answers and assign them in to a table here 
-
+                    input = Console.ReadLine();
+                    answerTable.assignAnswer(j, i, input);
+                    Console.Clear();
 
                     // then just calculate points by table and declare thems
 
 
                 }
+            }
 
+            int[] playerPoint = answerTable.calculatePoints();
+            for(int i = 0 ; i < playerCount; i++){
+                Console.WriteLine($" {playerList[i].name} : {playerPoint[i]}");
             }
         }
 
