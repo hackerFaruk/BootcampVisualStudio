@@ -9,25 +9,31 @@ namespace NPATGame
     internal class answerTable
     {
 
+        string[]? nameStage = null;
+        string[]? placeStage = null;
+        string[]? animalStage = null;
+        string[]? thingStage = null;
+
+        int[]? playerPoints = null;
 
 
-
-
-
-        internal Dictionary<string, string[]> CreateAnswerHashMap(int playerCount)
+        public answerTable(int player_num)
         {
-            Dictionary<string, string[]> answersHash = new Dictionary<string, string[]>();
 
-            string[] placeHolder = new string[playerCount];  // a space for each players answers
+            string[]?[] allAnswers = { nameStage, placeStage, animalStage, thingStage };
 
-            foreach (string stage in stageNames)
+            for (int i = 0; i < 4; i++)
             {
-                answersHash[stage] = placeHolder;
+                allAnswers[i] = new string[player_num];
             }
-
-            return answersHash;
+            playerPoints = new int[player_num];
 
         }
+        public void calculatePoint() { }
+
+
+
+
 
 
 
