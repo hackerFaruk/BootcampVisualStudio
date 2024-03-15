@@ -16,12 +16,15 @@ namespace NPATGame
         string[]? animalStage = null;
         string[]? thingStage = null;
 
-        int[]? playerPoints = null;
+        int[] playerPoints = [];
         string[]?[] allAnswers = new string[]?[4];
+
+        int player_count;
 
 
         public answerTable(int player_num)
         {
+            player_count = player_num;
 
             string[]?[] allAnswers = { nameStage, placeStage, animalStage, thingStage };
 
@@ -36,10 +39,10 @@ namespace NPATGame
             }
 
         }
-        public void calculatePoints()
+        public int[] calculatePoints()
         {
 
-            Dictionary<string, int> answers = new Dictionary<string, int>(); ;
+            Dictionary<string, int> answers = new Dictionary<string, int>();
             string[] mem;
 
 
@@ -60,8 +63,15 @@ namespace NPATGame
                     }
                 }
 
+                for (int j = 0; i < player_count; i++)
+                {
+                    // maksimum 10 puanı cevap veren oyuncu sayısana bölüp oyuncu puanına ekler 
+                    playerPoints[j] += 10 / answers[mem[j]];
+                }
+
 
             }
+            return playerPoints;
 
 
 
