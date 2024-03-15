@@ -67,16 +67,17 @@ namespace NPATGame
         /// <summary>
         /// This method gets amount of players and stores it in playerCount
         /// </summary>
-        internal void GetPlayerCount()
+        internal bool GetPlayerCount()
         {
-            Console.WriteLine("Youncu sayısı giriniz");
+            Console.WriteLine("Enter How Many Players You Will Have");
             playerCount = ReadIntFromConsole();
 
             if (playerCount == 0)
             {
-                Console.WriteLine("Oyuncu olmadığı için Oyun Bitiriliyor ");
-                return;
+
+                return true;
             }
+            return false;
         }
 
 
@@ -145,9 +146,10 @@ namespace NPATGame
         {
             Console.Clear();
             Console.WriteLine("NPAT Game is about to start");
-            Console.WriteLine("WWhen you are ready press any key ");
+            Console.WriteLine("When you are ready press any key ");
             Console.ReadKey();
             Console.Clear();
+
         }
 
         internal void StageManager(Player[] playerList)
@@ -173,12 +175,16 @@ namespace NPATGame
         public void Play()
         {
             SelectLetter();
-            GetPlayerCount();
-
-
+            bool isPlayerCountZero = GetPlayerCount();
+            if (isPlayerCountZero)
+            {
+                Console.WriteLine("ending game due to zero player count ");
+                return;
+            }
             string[] playerNames = GetPlayerNames();
             Player[] playerList = CreatePlayers(playerNames);
             StartGame();
+            StageManager(playerList);
         }
     }
 }
