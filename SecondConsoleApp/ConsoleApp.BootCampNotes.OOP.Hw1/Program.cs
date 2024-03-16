@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Security.Cryptography;
 
 namespace ConsoleApp.BootCampNotes.OOP.Hw1
@@ -36,7 +37,8 @@ namespace ConsoleApp.BootCampNotes.OOP.Hw1
 
             foreach (Player player in playerList)
             {
-                Console.WriteLine(   $" {player.Name}   {player.Surname}   {player.Score}"       );
+                Console.WriteLine(   $">>> {player.Name} {player.Surname} {player.Score}"   );
+                Console.WriteLine($"------------------------------");
             }
 
 
