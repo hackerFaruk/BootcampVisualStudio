@@ -67,16 +67,17 @@ namespace NPATGame
         /// <summary>
         /// This method gets amount of players and stores it in playerCount
         /// </summary>
-        internal void GetPlayerCount()
+        internal bool GetPlayerCount()
         {
-            Console.WriteLine("Oyuna Başlamadan Önce Lütfen Kaç kişi");
+            Console.WriteLine("Enter How Many Players You Will Have");
             playerCount = ReadIntFromConsole();
 
             if (playerCount == 0)
             {
-                Console.WriteLine("Oyuncu olmadığı için Oyun Bitiriliyor ");
-                return;
+
+                return true;
             }
+            return false;
         }
 
 
@@ -145,40 +146,60 @@ namespace NPATGame
         {
             Console.Clear();
             Console.WriteLine("NPAT Game is about to start");
-            Console.WriteLine("WWhen you are ready press any key ");
+            Console.WriteLine("When you are ready press any key ");
             Console.ReadKey();
             Console.Clear();
+
         }
 
         internal void StageManager(Player[] playerList)
         {
-            foreach (string stage in stageNames)
+
+            answerTable answerTable = new answerTable(playerCount);
+            string input = "";
+
+            for (int j = 0; j < 4; j++)
             {
+                string stage = turns[j];
 
-               
                 for (int i = 0; i < playerList.Length; i++)
-                { 
+                {
 
-                Console.WriteLine($"Seçili Harf {Letter}");
-                Console.WriteLine(
-                    $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
-                );
-                    Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, ceavbını yaz ve entera bas");
-               
-        }
+                    Console.WriteLine($"Seçili Harf {Letter}");
+                    Console.WriteLine(
+                        $"{Letter} harfi ile başlayan bir {stage} söylemeniz lazım"
+                    );
+                    Console.WriteLine($" Şuan Sıra sende {playerList[i].name}, cevabını yaz ve entera bas");
+                    // read answers and assign them in to a table here 
+                    input = Console.ReadLine();
+                    answerTable.assignAnswer(j, i, input);
+                    Console.Clear();
 
+                    // then just calculate points by table and declare thems
+
+
+                }
+            }
+
+            int[] playerPoint = answerTable.calculatePoints();
+            for(int i = 0 ; i < playerCount; i++){
+                Console.WriteLine($" {playerList[i].name} : {playerPoint[i]}");
             }
         }
 
         public void Play()
         {
             SelectLetter();
-            GetPlayerCount();
-          
-
-           string[] playerNames = GetPlayerNames();
+            bool isPlayerCountZero = GetPlayerCount();
+            if (isPlayerCountZero)
+            {
+                Console.WriteLine("ending game due to zero player count ");
+                return;
+            }
+            string[] playerNames = GetPlayerNames();
             Player[] playerList = CreatePlayers(playerNames);
             StartGame();
+            StageManager(playerList);
         }
     }
 }
