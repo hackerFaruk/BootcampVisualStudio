@@ -1,4 +1,7 @@
-﻿using Python.Runtime;
+﻿
+using System;
+using System.Diagnostics;
+
 
 namespace PythonCaller;
 
@@ -7,10 +10,10 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        Processor();
     }
 
-    static PyRunTime()
+/*  static void PyRunTime()
     {
         using (Py.GIL())
         {
@@ -20,14 +23,14 @@ class Program
             PythonEngine.Shutdown();
         }
     }
-
+*/
     static void Processor()
     {
         // Path to the Python interpreter
-        string pythonPath = @"C:\Path\To\Your\Python\Interpreter\python.exe";
+        string pythonPath = @"/usr/bin/python3";
 
         // Path to your Python script
-        string scriptPath = @"C:\Path\To\Your\Python\Script\script.py";
+        string scriptPath = @"/home/onuralp/projects/BootcampVisualStudio/PythonCaller/test.py";
 
         // Create a new process to run the Python script
         ProcessStartInfo psi = new ProcessStartInfo();
