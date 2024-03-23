@@ -8,22 +8,27 @@
         }
     }
 
-    public class Catagory
+    public class Category
     {
         public string Name { get; set; }
         public int id { get; set; }
 
-        public Catagory(int id, string name)
+        public Category(int id, string name)
         {
             this.id = id;
             this.Name = name;
         }
 
-        public Catagory() { }
+        public Category() { }
     }
 
     public class Product
     {
-        string id = Guid.NewGuid().ToString(); // this creates a specific  id for each object making all unique
+
+        public string id { get; private set; } = Guid.NewGuid().ToString();
+        // this creates a specific  id for each object making all unique
+        // private set makes it only settable within this class
+
+        public Category Category { get; set; } = new Category(); // catagorye referance atttık
     }
 }
