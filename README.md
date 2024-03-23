@@ -4,9 +4,9 @@ This repo  is list of my projects i made during my boot camp for MCSD training.
 
 
 ## Current work  ( focus)
-Console app 1 is ended. and started second console app development 
 
-Second console app will use better architectture. developed version of dungeon crawler and typo preventation method 
+Cureently developing console market app. 
+
 
 
 ## csharp console  / Console App 1 
@@ -39,3 +39,10 @@ have some waht data retantion with either local or azure data base
 
 ## NPAT Game
 To better use OOP consepts a game exercise has been made. Basic npat game allows variable amount of users to play name animal place thing game. It requires passing around the pc between players, selects a random letter then asks everyone their word clears screen asks for next player. when game ends game distuributes point to duplicate answers, gives full points  to unique ones and no points to wrong answers. 
+
+
+
+## Console MArket
+
+It is a shopping app but made without ui. It is all backend. uses diffrent concepts of backend even has a 3d secure mockup 
+
