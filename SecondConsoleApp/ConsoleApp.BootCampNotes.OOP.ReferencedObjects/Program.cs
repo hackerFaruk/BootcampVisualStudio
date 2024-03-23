@@ -31,4 +31,22 @@
 
         public Category Category { get; set; } = new Category(); // catagorye referance atttık
     }
+
+
+    public class Compute
+    {
+        public virtual int basicCompute()
+        {
+            return 3 - 5;
+        }
+    }
+
+    public class Calculator : Compute {
+
+        public override int basicCompute()
+        {
+            return base.basicCompute() *43 ; // base.MethodName runs base virtual method so this abstract can built on it 
+        }
+    }
+
 }
