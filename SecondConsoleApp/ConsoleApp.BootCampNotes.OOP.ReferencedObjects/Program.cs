@@ -10,12 +10,12 @@
 
     public class Category
     {
-        public string Name { get; set; }
-        public int id { get; set; }
+        public string? Name { get; set; }
+        public int Id { get; set; }
 
-        public Category(int id, string name)
+        public Category(int Id, string name)
         {
-            this.id = id;
+            this.Id = Id;
             this.Name = name;
         }
 
