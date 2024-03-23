@@ -35,3 +35,7 @@ Aims of project :
 have better dungeon crawler   
 have better typo preventtaion  
 have some waht data retantion with either local or azure data base 
+
+
+## NPAT Game
+To better use OOP consepts a game exercise has been made. Basic npat game allows variable amount of users to play name animal place thing game. It requires passing around the pc between players, selects a random letter then asks everyone their word clears screen asks for next player. when game ends game distuributes point to duplicate answers, gives full points  to unique ones and no points to wrong answers. 
