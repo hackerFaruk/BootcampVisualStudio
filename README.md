@@ -48,7 +48,15 @@ To better use OOP consepts a game exercise has been made. Basic npat game allows
 It is a shopping app but made without ui. It is all backend. uses diffrent concepts of backend even has a 3d secure mockup 
 
 Some cool thing about this 
+1. verification code sending
 ıt creates a text in project file when you tryto make purchase and returns hash of that calue to verification system so you need to reach your files and put in the code and its hash is tested. 
 Since i dont have a smtp server it just uses a text file as message
-i have used text file instead of win form since i wnat it to work on linux too 
+i have used text file instead of win form since i wnat it to work on linux too
+
+2. bank acount protection
+So during creation banks have random number, during bank account creation those random nuymbers assign into accounts privately. when bankaccounts requested to update credit bank id must be given so only the bank that creates that accoıunt can update given account
+
+3. banks also have a list that connect owner tckn to account 
+
+
 
