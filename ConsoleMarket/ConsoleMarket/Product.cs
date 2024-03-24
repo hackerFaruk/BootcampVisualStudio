@@ -14,6 +14,8 @@ namespace ConsoleMarket
         public double Price;
         public string Name;
 
+        public string SellerName; 
+
         public Product(string name, double price)
         {
             this.Name = name;

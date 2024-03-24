@@ -10,6 +10,11 @@ namespace ConsoleMarket
     {
         public string Name{get; private set; }
 
+        List<Seller> SellerList = new List<Seller>();
+        // adds all sellers 
+
+        List<Product> ShopFront = new List<Product>();
+
         public Shop(string name)
         {
             Name = name;
