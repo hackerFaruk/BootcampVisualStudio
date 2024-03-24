@@ -1,0 +1,28 @@
+user logs in ( optional part)
+shops list every item with 
+
+number Product name  product price and seller name 
+
+user can ad items to chart with add item number 
+user can clear chart witt "clear" or "clr" 
+user can proceed to payment with "pay"
+
+show available cards to users (in users account)
+
+users proceed to pay
+
+shop calls payment with card
+
+payment class uses card number to idetify bank,
+paymnet class creates verification code and asks for it 
+user needs to read text file and enters the code
+if code is correct payment method asks for money from bank 
+bank check account if amount is enough removes credit and return true to payment
+payment return true to shop
+shop creates bill to customer 
+shop creates an order class 
+order details are shown in result screen
+
+user can return to shop after order
+
+user now can  track order 
