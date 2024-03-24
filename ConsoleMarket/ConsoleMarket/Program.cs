@@ -21,11 +21,12 @@ namespace ConsoleMarket
             Seller Merchant = new Seller("The Merchant");
 
 
-            Company.Products.Add(Shovel);
-            Company.Products.Add(Flash);
+            Company.AddProduct(Shovel);
+            Company.AddProduct(Flash);
+            Merchant.AddProduct(Radio);
+            Merchant.AddProduct(Ladder);
 
-            Merchant.Products.Add(Radio);   
-            Merchant.Products.Add(Ladder);
+            
 
 
 
