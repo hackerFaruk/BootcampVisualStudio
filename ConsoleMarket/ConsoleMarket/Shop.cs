@@ -21,19 +21,30 @@ namespace ConsoleMarket
             Name = name;
         }
 
-        public void AddSeller(params Seller[] sellerList) { }
 
-        // takes from list of sellers to shop list doesnt allows someone from outside adding
-        // any products only sellers can add
-        private void AddProduct()
+        public Shop(string name, params Seller[] sellerList)
         {
-            foreach (Seller seller in SellerList)
+            Name = name;
+            AddSeller(sellerList);
+        }
+
+
+
+        public void AddSeller(params Seller[] sellerList)
+        {
+            foreach (Seller seller in sellerList)
             {
-                foreach (Product product in seller.ProductList)
+                if (!SellerList.Contains(seller)) // eğer listede eklki değilse
                 {
-                    ShopFront.Add(product);
+                    SellerList.Add(seller);  // listeye satıcıyı ekle 
+                    foreach (Product product in seller.ProductList) // satıcı ürünlerini listeye ekle 
+                    {
+                        ShopFront.Add(product);
+                    }
                 }
             }
         }
+
+      
     }
 }

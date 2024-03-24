@@ -7,10 +7,12 @@ namespace ConsoleMarket
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            createSellers();
+            Shop MaketPlace = createShop();
         }
 
-        static  void createSellers()
+
+
+       public static Shop createShop()
         {
             Product Shovel = new Product("Shovel" , 15.0);
             Product Flash = new Product("ProFlashLight", 7.5);
@@ -31,19 +33,11 @@ namespace ConsoleMarket
             // or seller can be created and added products at the same time 
             Seller Porkrind = new Seller("Porkrind",Spray,Horn);
 
-
-           
-
-
-           
-
-
-
-
-
-
+            Shop MarketPlace = new Shop("AllInHere", Company,Merchant,Porkrind);
+            return MarketPlace;
         }
-
+        
 
     }
+        
 }
