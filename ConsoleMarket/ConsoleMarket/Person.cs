@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    internal class Person
+    public class Person
     {
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -25,7 +25,8 @@ namespace ConsoleMarket
 
             this.PhoneNumber = rnd.Next(1000000, 10000000).ToString();
 
-
         }
+
+        
     }
 }
