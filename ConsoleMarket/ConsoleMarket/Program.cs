@@ -4,6 +4,14 @@ namespace ConsoleMarket
 {
     internal class Program
     {
+
+        // to do
+        //  Shop +
+        //  Customer ( Bank Card  Chart)
+        //   Payment ( Bank Shop)
+
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
