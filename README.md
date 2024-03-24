@@ -6,6 +6,7 @@ This repo  is list of my projects i made during my boot camp for MCSD training.
 ## Current work  ( focus)
 
 Cureently developing console market app. 
+Adding hash system for purchase verification 
 
 
 
