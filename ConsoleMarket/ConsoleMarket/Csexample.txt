@@ -1,0 +1,3 @@
+Hello, this is some text written to a file.
+This is another line.
+And one more line for good measure.

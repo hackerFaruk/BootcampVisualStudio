@@ -16,7 +16,8 @@ namespace ConsoleMarket
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            
+
+            VerCode.hashTest();
             
             Console.WriteLine("mailsent");
             Shop MaketPlace = createShop();
