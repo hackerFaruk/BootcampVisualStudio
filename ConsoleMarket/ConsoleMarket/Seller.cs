@@ -21,6 +21,12 @@ namespace ConsoleMarket
             this.Name = name;
         }
 
+        public Seller(string name, params Product[] products)
+        {
+            this.Name = name; 
+            this.AddProduct(products);
+        }
+
         public void AddProduct(Product product)
         {
             Products.Add(product);
