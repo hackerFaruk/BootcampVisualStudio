@@ -50,5 +50,5 @@ It is a shopping app but made without ui. It is all backend. uses diffrent conce
 Some cool thing about this 
 ıt creates a text in project file when you tryto make purchase and returns hash of that calue to verification system so you need to reach your files and put in the code and its hash is tested. 
 Since i dont have a smtp server it just uses a text file as message
-i have used text file instead of win form since i wnat it to work on linux too
+i have used text file instead of win form since i wnat it to work on linux too 
 
