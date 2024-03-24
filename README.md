@@ -42,7 +42,7 @@ To better use OOP consepts a game exercise has been made. Basic npat game allows
 
 
 
-## Console MArket
+## Console Market
 
 It is a shopping app but made without ui. It is all backend. uses diffrent concepts of backend even has a 3d secure mockup 
 
