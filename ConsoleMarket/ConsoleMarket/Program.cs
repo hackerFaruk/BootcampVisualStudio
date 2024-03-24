@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
+
 namespace ConsoleMarket
 {
     internal class Program
@@ -15,6 +16,9 @@ namespace ConsoleMarket
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            
+            
+            Console.WriteLine("mailsent");
             Shop MaketPlace = createShop();
         }
 
