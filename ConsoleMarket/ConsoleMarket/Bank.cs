@@ -25,8 +25,11 @@ namespace ConsoleMarket
 
         public void openAccount(Person person, double credit)
         {
+            int bankId = BankId;
             if(credit < 0) { return; }
-            else if(BankAccounts.Keys.Contains(person.TCKN)) { return; }
+            else if(BankAccounts.Keys.Contains(person.TCKN)) {
+                BankAccounts[person.TCKN].UpdateCredit(credit,bankId);
+                return; }
             BankAccount account = new BankAccount(person, credit, BankId);
             BankAccounts.Add(person.TCKN, account);
         }
