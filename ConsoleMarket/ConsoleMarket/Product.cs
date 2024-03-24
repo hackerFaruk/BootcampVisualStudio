@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    internal class Product
+    public class Product
     {
         public string Id { get; private set; } = Guid.NewGuid().ToString();
 

@@ -17,10 +17,12 @@ namespace ConsoleMarket
         {
             Console.WriteLine("Hello, World!");
 
-            VerCode.hashTest();
-            
-            Console.WriteLine("mailsent");
+           ShopChart chart = new ShopChart();
+           
+
             Shop MaketPlace = createShop();
+
+            
         }
 
 

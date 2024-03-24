@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    // this is just a prodcuct list
-
-
-    public class ShopChart
+    internal class ShopChart
     {
+        private List<Product> ProductList = new List<Product>();
 
-        public List<Product> ProductList = new List<Product>();
-        
-
-        public void AddToChart(params Product[] )
-    {
-        
-    }
-
+        public void AddToChart(params Product[] products)
+        {
+            foreach (Product product in products)
+            {
+                ProductList.Add(product);
+            }
+        }
     }
 }
