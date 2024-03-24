@@ -12,9 +12,16 @@ namespace ConsoleMarket
     internal class Seller
     {
         public String Name { get; private set; } // allows every one to see name but only constructor to set it
-        
-        private List<Product> Products = new List<Product>();
+
         // private because i want you to use add method below
+        private List<Product> Products = new List<Product>();
+
+        // Public property with only a getter so you can see it from outside
+        public List<Product> ProductList
+        {
+            get { return Products; }
+        }
+        
 
         public Seller(string name)
         {

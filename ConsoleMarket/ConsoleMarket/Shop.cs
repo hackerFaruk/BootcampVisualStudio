@@ -8,10 +8,11 @@ namespace ConsoleMarket
 {
     internal class Shop
     {
-        public string Name{get; private set; }
+        public string Name { get; private set; }
 
         private List<Seller> SellerList = new List<Seller>();
-        // adds all sellers 
+
+        // adds all sellers
 
         private List<Product> ShopFront = new List<Product>();
 
@@ -20,10 +21,19 @@ namespace ConsoleMarket
             Name = name;
         }
 
+        public void AddSeller(params Seller[] sellerList) { }
 
-        public void AddSeller( params Seller[] sellerList)
+        // takes from list of sellers to shop list doesnt allows someone from outside adding
+        // any products only sellers can add
+        private void AddProduct()
         {
-
+            foreach (Seller seller in SellerList)
+            {
+                foreach (Product product in seller.ProductList)
+                {
+                    ShopFront.Add(product);
+                }
+            }
         }
     }
 }
