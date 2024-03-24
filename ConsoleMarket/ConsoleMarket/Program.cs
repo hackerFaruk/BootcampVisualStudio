@@ -7,6 +7,7 @@ namespace ConsoleMarket
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            createSellers();
         }
 
         static  void createSellers()
@@ -21,12 +22,13 @@ namespace ConsoleMarket
             Seller Merchant = new Seller("The Merchant");
 
 
+            // you can add products one by one or as many as you want
             Company.AddProduct(Shovel);
             Company.AddProduct(Flash);
-            Merchant.AddProduct(Radio);
-            Merchant.AddProduct(Ladder);
+            Merchant.AddProduct(Ladder, Radio);
 
-            
+
+           
 
 
 
