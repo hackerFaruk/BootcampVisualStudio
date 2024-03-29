@@ -12,7 +12,7 @@ namespace dataBaseLogger
     internal class databaseConnector
     {
 
-        internal void makeConnection()
+        internal void testTead()
         {
             try
             {

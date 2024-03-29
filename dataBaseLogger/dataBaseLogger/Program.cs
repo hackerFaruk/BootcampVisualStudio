@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hello, World!");
             databaseConnector connector = new databaseConnector();
-            connector.makeConnection();
+            connector.testTead();
 
         }
     }
