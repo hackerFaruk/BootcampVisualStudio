@@ -18,10 +18,14 @@ namespace dataBaseLogger
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
 
-                builder.DataSource = "<your_server.database.windows.net>";
-                builder.UserID = "<your_username>";
-                builder.Password = "<your_password>";
-                builder.InitialCatalog = "<your_database>";
+                builder.DataSource = "HACQER-FARUK\\SQLEXPRESS";
+                builder.UserID = "sa";
+                builder.Password = "123";
+                builder.InitialCatalog = "testDataOne";
+
+                // Set TrustServerCertificate=true to bypass certificate validation it is my own server 
+                builder["TrustServerCertificate"] = "true";
+                
 
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 {
@@ -30,7 +34,7 @@ namespace dataBaseLogger
 
                     connection.Open();
 
-                    String sql = "SELECT name, collation_name FROM sys.databases";
+                    String sql = "SELECT userName FROM first_table";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -38,7 +42,7 @@ namespace dataBaseLogger
                         {
                             while (reader.Read())
                             {
-                                Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
+                                Console.WriteLine("{0}", reader.GetString(0)); // Only retrieve the userName column
                             }
                         }
                     }
@@ -50,9 +54,11 @@ namespace dataBaseLogger
             }
             Console.WriteLine("\nDone. Press enter.");
             Console.ReadLine();
+       
+        
+        
         }
        
-
 
 
     }
