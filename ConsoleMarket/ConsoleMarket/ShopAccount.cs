@@ -45,6 +45,10 @@ namespace ConsoleMarket
             this.UserChart.UiPresenter();
         }
 
-
+        public void ClearChart()
+        {
+            UserChart.ClearChart();
+        }
     }
+}
 }

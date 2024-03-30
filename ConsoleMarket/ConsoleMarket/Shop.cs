@@ -12,6 +12,8 @@ namespace ConsoleMarket
 
         public string Name { get; private set; }
 
+       
+
         private List<Seller> SellerList = new List<Seller>();
 
         // adds all sellers
@@ -30,6 +32,7 @@ namespace ConsoleMarket
             AddSeller(sellerList);
         }
 
+        public int maksProdutNum { get { return ShopFront.Count; } }
 
 
         public void AddSeller(params Seller[] sellerList)
@@ -47,6 +50,10 @@ namespace ConsoleMarket
             }
         }
 
+        public Product SelectProductByNumber(int selection)
+        {
+            return ShopFront[selection - 1];
+        }
 
         public void UiPresenter()
         {
@@ -69,6 +76,7 @@ namespace ConsoleMarket
             }
         }
 
+        
       
     }
 }

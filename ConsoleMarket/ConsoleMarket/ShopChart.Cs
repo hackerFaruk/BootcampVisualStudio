@@ -38,5 +38,10 @@ namespace ConsoleMarket
             }
             Console.WriteLine($"total is : {TotalPrice}");
         }
+
+        public void ClearChart()
+        {
+            UserChart.Clear();  
+        }
     }
 }
