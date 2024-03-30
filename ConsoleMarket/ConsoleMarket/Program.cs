@@ -17,11 +17,13 @@ namespace ConsoleMarket
 
             
 
-            Shop MaketPlace = createShop();
+            Shop maketPlace = createShop();
 
             Person testUser = new Person("alp", "arslan");
 
-            ShopAccount shopAccount = new ShopAccount(testUser);
+            ShopAccount testAccount = new ShopAccount(testUser);
+
+            
 
 
         }
