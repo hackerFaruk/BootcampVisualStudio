@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    public class BankAccount : AccountBase
+    public class BankAccount : AccountBase  IUiPresenter
     {
 
         public double AccountCredit { get; private set; }

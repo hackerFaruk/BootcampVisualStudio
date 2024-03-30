@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    internal class ShopChart
+    internal class ShopChart : IUiPresenter
     {
         
         private Dictionary<Product,int> UserChart= new Dictionary<Product, int>();
@@ -24,7 +24,7 @@ namespace ConsoleMarket
             }
         }
 
-        public void ChartUiPresenter()
+        public void UiPresenter()
         {
             Console.WriteLine("Prodcut Name  Amount");
 
