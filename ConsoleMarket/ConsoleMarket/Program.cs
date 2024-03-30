@@ -21,6 +21,8 @@ namespace ConsoleMarket
 
             Person testUser = new Person("alp", "arslan");
 
+            ShopAccount shopAccount = new ShopAccount(testUser);
+
 
         }
 
