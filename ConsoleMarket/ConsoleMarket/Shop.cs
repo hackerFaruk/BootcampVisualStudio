@@ -8,6 +8,8 @@ namespace ConsoleMarket
 {
     internal class Shop : IUiPresenter
     {
+        private int ProductNumber = 1;
+
         public string Name { get; private set; }
 
         private List<Seller> SellerList = new List<Seller>();
@@ -48,20 +50,21 @@ namespace ConsoleMarket
 
         public void UiPresenter()
         {
-          
+            ProductNumber = 1;
             // formatted header
-            string headerRow = $"{"Product",-20} {"Price",-20} {"Seller",-20}";
+            string headerRow = $"{"Number",-20} {"Product",-20} {"Price",-20} {"Seller",-20}";
 
             Console.WriteLine(headerRow);
-            Console.WriteLine($"{"---------",-20} {"---------",-20} {"---------",-20}");
+            Console.WriteLine($"{"---------",-20} {"---------",-20} {"---------",-20} {"---------",-20}");
+
 
 
             foreach (var product in ShopFront) {
 
 
-                string formattedString = $"{product.Name,-20} {product.Price.ToString(),-20} {product.SellerName,-20}";
+                string formattedString = $"{ProductNumber,-20} {product.Name,-20} {product.Price.ToString(),-20} {product.SellerName,-20}";
                 Console.WriteLine(formattedString);
-
+                ProductNumber++;
                
             }
         }
