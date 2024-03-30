@@ -29,6 +29,7 @@ namespace ConsoleMarket
         public void UiPresenter()
         {
             TotalPrice = 0;
+            Console.WriteLine($"User Chart");
             Console.WriteLine($"{"Prodcut Name",-20} {"Amount",-20}");
 
             foreach(Product product in UserChart.Keys) { 
