@@ -8,7 +8,9 @@ namespace ConsoleMarket
 {
     internal class ShopChart : IUiPresenter
     {
-        
+
+        private double TotalPrice = 0;
+
         private Dictionary<Product,int> UserChart= new Dictionary<Product, int>();
 
         public void AddToChart(params Product[] products)
@@ -26,11 +28,14 @@ namespace ConsoleMarket
 
         public void UiPresenter()
         {
-            Console.WriteLine("Prodcut Name  Amount");
+            TotalPrice = 0;
+            Console.WriteLine($"{"Prodcut Name",-20} {"Amount",-20}");
 
             foreach(Product product in UserChart.Keys) { 
                 Console.WriteLine(product.Name + "  "+ UserChart[product]);
+                TotalPrice += product.Price*UserChart[product]; // userchart[prodcut] gives amounts
             }
+            Console.WriteLine($"total is : {TotalPrice}");
         }
     }
 }

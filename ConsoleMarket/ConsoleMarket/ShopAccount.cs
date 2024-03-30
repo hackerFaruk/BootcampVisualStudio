@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleMarket
 {
 
-    internal class ShopAccount : AccountBase
+    internal class ShopAccount : AccountBase , IUiPresenter
     {
         public string Adress { get; private set; }
         public ShopChart UserChart {  get; private set; }
@@ -38,6 +38,11 @@ namespace ConsoleMarket
         public void ShowChart()
         {
            this.UserChart.UiPresenter();
+        }
+
+        public void UiPresenter()
+        {
+            this.UserChart.UiPresenter();
         }
 
 
