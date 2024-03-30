@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    internal class Shop
+    internal class Shop : IUiPresenter
     {
         public string Name { get; private set; }
 
@@ -46,7 +46,25 @@ namespace ConsoleMarket
         }
 
 
+        public void UiPresenter()
+        {
+          
+            // formatted header
+            string headerRow = $"{"Product",-20} {"Price",-20} {"Seller",-20}";
 
+            Console.WriteLine(headerRow);
+            Console.WriteLine($"{"---------",-20} {"---------",-20} {"---------",-20}");
+
+
+            foreach (var product in ShopFront) {
+
+
+                string formattedString = $"{product.Name,-20} {product.Price.ToString(),-20} {product.SellerName,-20}";
+                Console.WriteLine(formattedString);
+
+               
+            }
+        }
 
       
     }

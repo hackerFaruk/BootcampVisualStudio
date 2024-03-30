@@ -17,13 +17,16 @@ namespace ConsoleMarket
 
             
 
-            Shop maketPlace = createShop();
+            Shop marketPlace = createShop();
 
             Person testUser = new Person("alp", "arslan");
 
             ShopAccount testAccount = new ShopAccount(testUser);
 
-            
+
+            marketPlace.UiPresenter();
+
+          
 
 
         }
