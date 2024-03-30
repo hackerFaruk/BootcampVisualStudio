@@ -1,15 +1,13 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-
 namespace ConsoleMarket
 {
     internal class Program
     {
-
         // to do
         //  Shop +
         //  Customer ( Bank Card  Chart)
-        //   Payment ( Bank Shop)
+        //  Payment ( Bank Shop)
 
 
 
@@ -17,19 +15,18 @@ namespace ConsoleMarket
         {
             Console.WriteLine("Hello, World!");
 
-           ShopChart chart = new ShopChart();
-           
+            
 
             Shop MaketPlace = createShop();
 
-            
+            Person testUser = new Person("alp", "arslan");
+
+
         }
 
-
-
-       public static Shop createShop()
+        public static Shop createShop()
         {
-            Product Shovel = new Product("Shovel" , 15.0);
+            Product Shovel = new Product("Shovel", 15.0);
             Product Flash = new Product("ProFlashLight", 7.5);
             Product Radio = new Product("Radio", 10.0);
             Product Ladder = new Product("Ladder", 20.0);
@@ -45,14 +42,11 @@ namespace ConsoleMarket
             Company.AddProduct(Flash);
             Merchant.AddProduct(Ladder, Radio);
 
-            // or seller can be created and added products at the same time 
-            Seller Porkrind = new Seller("Porkrind",Spray,Horn);
+            // or seller can be created and added products at the same time
+            Seller Porkrind = new Seller("Porkrind", Spray, Horn);
 
-            Shop MarketPlace = new Shop("AllInHere", Company,Merchant,Porkrind);
+            Shop MarketPlace = new Shop("AllInHere", Company, Merchant, Porkrind);
             return MarketPlace;
         }
-        
-
     }
-        
 }
