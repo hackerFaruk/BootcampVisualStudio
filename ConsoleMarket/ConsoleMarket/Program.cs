@@ -24,7 +24,8 @@ namespace ConsoleMarket
             ShopAccount testAccount = new ShopAccount(testUser);
 
 
-            
+            Ui ShopUi = new Ui(marketPlace, testAccount);
+            ShopUi.StartUi();
 
           
 

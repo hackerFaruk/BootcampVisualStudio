@@ -26,11 +26,18 @@ namespace ConsoleMarket
             this.account = account;
         }
 
+
+        public void StartUi (){ 
+        DisplayShopPage();
+        GetCommands();
+
+        }
+
         public void UiPresenter()
         {
             this.shop.UiPresenter();
             Console.WriteLine("  ");
-            this.shop.UiPresenter();
+            this.account.UiPresenter();
             Console.WriteLine("  ");
         }
 
@@ -60,11 +67,13 @@ namespace ConsoleMarket
             else if (isPossibleProductNum(commandInput))
             {
                 account.AddToChart(shop.SelectProductByNumber(int.Parse(commandInput)));
+                DisplayShopPage();
             }
             else
             {
                 Console.WriteLine("unknown command ");
             }
+            this.GetCommands();
         }
 
         private bool isPossibleProductNum(string numInput)
