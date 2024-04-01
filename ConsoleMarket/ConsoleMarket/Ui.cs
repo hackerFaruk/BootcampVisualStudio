@@ -69,9 +69,16 @@ namespace ConsoleMarket
                 account.AddToChart(shop.SelectProductByNumber(int.Parse(commandInput)));
                 DisplayShopPage();
             }
+            else if(commandInput == "clr")
+            {
+                DisplayShopPage();
+                Console.WriteLine(" pending command ");
+            }
             else
             {
+                DisplayShopPage();
                 Console.WriteLine("unknown command ");
+               
             }
             this.GetCommands();
         }
