@@ -78,7 +78,7 @@ namespace ConsoleMarket
                 else if (this.account.UserChart.TotalPrice == 0)
                 {
                     DisplayShopPage();
-                    Console.WriteLine(" you dont have anything on your basket ");
+                    Console.WriteLine("You dont have anything on your basket");
                 }
             }
             else

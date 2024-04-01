@@ -6,6 +6,7 @@ namespace ConsoleMarket
     {
         // to do
         //  Shop +
+        // accounta bank ve kart eklenecek 
         //  Customer ( Bank Card  Chart)
         //  Payment ( Bank Shop)
 
