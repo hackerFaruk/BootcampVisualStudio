@@ -8,5 +8,14 @@ namespace ConsoleMarket
 {
     internal class Payment
     {
+
+
+
+
+
+        public Payment(double price ) { }
+
+
+
     }
 }

@@ -9,7 +9,9 @@ namespace ConsoleMarket
     internal class ShopChart : IUiPresenter
     {
 
-        private double TotalPrice = 0;
+       
+
+        public double TotalPrice { private set; get; }
 
         private Dictionary<Product,int> UserChart= new Dictionary<Product, int>();
 

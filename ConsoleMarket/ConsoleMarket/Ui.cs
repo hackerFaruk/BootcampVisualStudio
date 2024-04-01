@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMarket
 {
-    internal class Ui : IUiPresenter
+    internal class Ui
     {
         ShopAccount account;
         Shop shop;
@@ -26,14 +26,13 @@ namespace ConsoleMarket
             this.account = account;
         }
 
-
-        public void StartUi (){ 
-        DisplayShopPage();
-        GetCommands();
-
+        public void StartUi()
+        {
+            DisplayShopPage();
+            GetCommands();
         }
 
-        public void UiPresenter()
+        public void ShopUiPresenter()
         {
             this.shop.UiPresenter();
             Console.WriteLine("  ");
@@ -51,7 +50,7 @@ namespace ConsoleMarket
         public void DisplayShopPage()
         {
             Console.Clear();
-            this.UiPresenter();
+            this.ShopUiPresenter();
             this.HelpLine();
         }
 
@@ -69,16 +68,23 @@ namespace ConsoleMarket
                 account.AddToChart(shop.SelectProductByNumber(int.Parse(commandInput)));
                 DisplayShopPage();
             }
-            else if(commandInput == "clr")
+            else if (commandInput == "pay")
             {
-                DisplayShopPage();
-                Console.WriteLine(" pending command ");
+                if (this.account.UserChart.TotalPrice > 0)
+                {
+                    DisplayShopPage();
+                    Console.WriteLine(" pending ");
+                }
+                else if (this.account.UserChart.TotalPrice == 0)
+                {
+                    DisplayShopPage();
+                    Console.WriteLine(" you dont have anything on your basket ");
+                }
             }
             else
             {
                 DisplayShopPage();
                 Console.WriteLine("unknown command ");
-               
             }
             this.GetCommands();
         }
