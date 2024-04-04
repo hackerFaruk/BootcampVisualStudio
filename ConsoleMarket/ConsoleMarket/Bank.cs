@@ -16,6 +16,8 @@ namespace ConsoleMarket
         Random rnd = new Random();
         private int BankId;
 
+        List<BankCard> bankCards = new List<BankCard>();
+
         public Bank(string name)
         {
             this.Name = name;
@@ -56,5 +58,15 @@ namespace ConsoleMarket
                 BankAccounts[person.TCKN].UpdateCredit(credit, bankId);
             }
         }
+
+
+        public BankCard CreateBankCard(Person person , BankAccount? account)
+        {
+            int bankId = this.BankId;
+            if (account == null) { account = BankAccounts[person.TCKN]; }
+            return new BankCard(person, this , account,bankId );
+        }
+
+
     }
 }

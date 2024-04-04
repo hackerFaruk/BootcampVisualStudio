@@ -12,7 +12,7 @@ namespace ConsoleMarket
         Bank ConnnectedBank;
         BankAccount ConnectedBankAccount;
         private int bankPortectorId; // while cretaing bank bank will have random int and only bank will know it account credit only can be changed by bank 
-
+     
 
         /// <summary>
         /// Can only be used by a bank because of bankprotector id
@@ -25,12 +25,10 @@ namespace ConsoleMarket
         /// <param name="bankPortectorId"></param>
         public BankCard(Person accountOwner, Bank bank, BankAccount account, int bankPortectorId) : base(accountOwner)  
         {
-            
+     
             this.ConnnectedBank = bank;
             this.ConnectedBankAccount = account;
             this.bankPortectorId= bankPortectorId;
-
-
         }
 
         
