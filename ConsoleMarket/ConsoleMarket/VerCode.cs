@@ -9,6 +9,10 @@ namespace ConsoleMarket
 {
     internal static class VerCode
     {
+        /// <summary>
+        ///  generates a random hash
+        /// </summary>
+        /// <returns></returns>
         public static string VerCodeGen()
         {
             Random rnd = new Random();
@@ -30,6 +34,23 @@ namespace ConsoleMarket
             }
         }
 
+        /// <summary>
+        /// Creates a random value resturns it and also writes it into a file
+        /// </summary>
+        /// <returns></returns>
+        public static string SeedGen()
+        {
+            Random rnd = new Random();
+            string verificationCode = rnd.Next(10000, 100000).ToString(); // generetae 5 digit code
+            FileWriter("verificationCode", verificationCode);
+            return verificationCode;
+        }
+
+        /// <summary>
+        /// Hashes a given string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string Hasher(string input)
         {
             using (SHA256 sha256 = SHA256.Create())

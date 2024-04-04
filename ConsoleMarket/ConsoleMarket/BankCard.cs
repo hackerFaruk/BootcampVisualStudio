@@ -31,6 +31,12 @@ namespace ConsoleMarket
             this.bankPortectorId= bankPortectorId;
         }
 
+
+        public bool PaymentRequest()
+        {
+            // first create code
+
+        }
         
     }
 }
