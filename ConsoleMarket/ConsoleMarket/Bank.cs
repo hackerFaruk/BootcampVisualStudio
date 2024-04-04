@@ -16,7 +16,7 @@ namespace ConsoleMarket
         Random rnd = new Random();
         private int BankId;
 
-        List<BankCard> bankCards = new List<BankCard>();
+        private List<BankCard> bankCards = new List<BankCard>();
 
         public Bank(string name)
         {
@@ -66,11 +66,16 @@ namespace ConsoleMarket
             {
                 account = BankAccounts[person.TCKN];
             }
-            return new BankCard(person, this, account, bankId);
+            BankCard card = new BankCard(person, this, account, bankId);
+            bankCards.Add(card);
+            return card;
         }
 
-        public bool CardVerificationHandler()
+        public bool CardVerificationHandler(BankCard card)
         {
+            // eğer card bu bankaya aitse 
+           if( cardChecker(card) == false) { return false; }
+
             string codeExpected = VerCode.Hasher(VerCode.SeedGen());
             Console.WriteLine("Please Provide Verification Code From File");
             string codeGiven = Console.ReadLine();
@@ -83,6 +88,21 @@ namespace ConsoleMarket
             {
                 return false;
             }
+
         }
+
+        /// <summary>
+        /// returns true if card is in list of bank 
+        /// </summary>
+        /// <returns></returns>
+        private bool cardChecker( BankCard card)
+        {
+            if(bankCards.Contains(card))
+            {
+                return true;
+            }
+            else { return  false; }
+        }
+
     }
 }
