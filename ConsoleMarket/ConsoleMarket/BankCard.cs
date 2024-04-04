@@ -32,9 +32,10 @@ namespace ConsoleMarket
         }
 
 
-        public bool PaymentRequest()
+        public void CardVerificationRequest()
         {
             // first create code
+            this.ConnnectedBank.CardVerificationHandler();
 
         }
         

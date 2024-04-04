@@ -59,14 +59,30 @@ namespace ConsoleMarket
             }
         }
 
-
-        public BankCard CreateBankCard(Person person , BankAccount? account)
+        public BankCard CreateBankCard(Person person, BankAccount? account)
         {
             int bankId = this.BankId;
-            if (account == null) { account = BankAccounts[person.TCKN]; }
-            return new BankCard(person, this , account,bankId );
+            if (account == null)
+            {
+                account = BankAccounts[person.TCKN];
+            }
+            return new BankCard(person, this, account, bankId);
         }
 
-
+        public bool CardVerificationHandler()
+        {
+            string codeExpected = VerCode.Hasher(VerCode.SeedGen());
+            Console.WriteLine("Please Provide Verification Code From File");
+            string codeGiven = Console.ReadLine();
+            codeGiven = VerCode.Hasher(codeGiven);
+            if (codeGiven == codeExpected)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
