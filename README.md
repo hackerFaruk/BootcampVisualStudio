@@ -6,7 +6,8 @@ This repo  is list of my projects i made during my boot camp for MCSD training.
 ## Current work  ( focus)
 
 Cureently developing console market app. 
-Adding hash system for purchase verification 
+
+currently only a simple bool value returns for succesful payment but currently developing a payment object that  will be created by bank and send to market which market can use that payment object to confirm payment and create a bill
 
 
 
@@ -56,7 +57,10 @@ i have used text file instead of win form since i wnat it to work on linux too
 2. bank acount protection
 So during creation banks have random number, during bank account creation those random nuymbers assign into accounts privately. when bankaccounts requested to update credit bank id must be given so only the bank that creates that accoıunt can update given account
 
-3. banks also have a list that connect owner tckn to account 
+3. banks also have a list that connect owner tckn to account
+
+4. Bank protected process
+  bank currently tests request of user with pin send over message (as a txt file cureently) then handles payment processes to make payment and retruns succes to market website 
 
 
 
