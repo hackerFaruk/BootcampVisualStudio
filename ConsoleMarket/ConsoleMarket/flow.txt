@@ -17,6 +17,9 @@ users proceed to pay
 
 shop calls payment with card   
 
+---- currently card can make a check with bank  but no price control 
+soo if card is approvode with code bank account will be checked for payment price
+
 
 payment class uses card number to idetify bank,
 paymnet class creates verification code and asks for it 
