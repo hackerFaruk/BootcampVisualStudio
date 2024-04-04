@@ -22,5 +22,6 @@ namespace ConsoleMarket
         if (bankID == bankPortectorId) { AccountCredit += credit; }
         }
 
+
     }
 }

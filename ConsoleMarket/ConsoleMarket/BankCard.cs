@@ -8,9 +8,9 @@ namespace ConsoleMarket
 {
     public class BankCard : AccountBase
     {
-        
-        Bank ConnnectedBank;
-        BankAccount ConnectedBankAccount;
+
+        public Bank ConnnectedBank { get; private set; }
+        public BankAccount ConnectedBankAccount { get;  private set; }
         private int bankPortectorId; // while cretaing bank bank will have random int and only bank will know it account credit only can be changed by bank 
      
 
@@ -37,6 +37,11 @@ namespace ConsoleMarket
             // first create code
             if (this.ConnnectedBank.CardVerificationHandler(this)) { return true; }
             else { return false; };
+
+        }
+
+        private bool MakePayment(double Amount)
+        {
 
         }
         

@@ -104,5 +104,12 @@ namespace ConsoleMarket
             else { return  false; }
         }
 
+
+        public bool CheckAccountCredit( double price, BankCard card)
+        {
+            if(card.co
+        }
+
+
     }
 }
