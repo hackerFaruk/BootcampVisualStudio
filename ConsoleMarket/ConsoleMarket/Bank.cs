@@ -46,11 +46,12 @@ namespace ConsoleMarket
         }
 
         /// <summary>
-        /// This is an updater that can reduce bank acount credit
+        /// This is an updater that can reduce bank acount credit so it is private 
+        /// someone outside can send you money but cant take out 
         /// </summary>
         /// <param name="person"></param>
         /// <param name="credit"></param>
-        public void updateCredit(Person person, double credit)
+        private void updateCredit(Person person, double credit)
         {
             int bankId = this.BankId;
             if (BankAccounts.Keys.Contains(person.TCKN))
@@ -105,11 +106,31 @@ namespace ConsoleMarket
         }
 
 
-        public bool CheckAccountCredit( double price, BankCard card)
+        public bool isEnoughCredit( double price, BankCard card)
         {
-            if(card.co
+            if(card.ConnectedBankAccount.AccountCredit> price) { return true; }
+            else
+            {
+                return false;
+            }
         }
 
+
+        public bool PaymentRequest( BankCard card , double price)
+        {
+            // kart bize mi ait 
+            if (cardChecker(card) == false) { return false;  }
+            //kart işlemini sahibi mi yapıyor 
+            if( CardVerificationHandler(card)==false ) { return false; }
+            //  hesapta yeterli bakiye var mı 
+            if (isEnoughCredit(price , card) == false) { return false; }
+
+            this.updateCredit(card.AccountOwner, -1.0*price);
+            return true;
+
+
+
+        }
 
     }
 }

@@ -32,6 +32,14 @@ namespace ConsoleMarket
         }
 
 
+
+        public bool PaymentRequest( double price)
+        {
+            bool paymnetResult = this.ConnnectedBank.PaymentRequest(this, price);
+            return paymnetResult;
+        }
+
+        // below will be deleted 
         public bool CardVerificationRequest()
         {
             // first create code
@@ -42,6 +50,12 @@ namespace ConsoleMarket
 
         private bool MakePayment(double Amount)
         {
+            if( this.ConnnectedBank.isEnoughCredit(Amount, this) == true)
+            {
+                
+                return true;
+            }
+            else { return false; };
 
         }
         
