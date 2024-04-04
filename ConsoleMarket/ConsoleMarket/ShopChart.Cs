@@ -45,5 +45,7 @@ namespace ConsoleMarket
         {
             UserChart.Clear();  
         }
+
     }
+
 }

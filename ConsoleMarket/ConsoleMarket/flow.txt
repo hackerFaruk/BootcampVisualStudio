@@ -7,11 +7,16 @@ user can ad items to chart with add item number
 user can clear chart witt "clear" or "clr" 
 user can proceed to payment with "pay"
 
+
+
 show available cards to users (in users account)
+
 
 users proceed to pay
 
+
 shop calls payment with card
+
 
 payment class uses card number to idetify bank,
 paymnet class creates verification code and asks for it 
@@ -25,4 +30,4 @@ order details are shown in result screen
 
 user can return to shop after order
 
-user now can  track order 
+user now can  track order

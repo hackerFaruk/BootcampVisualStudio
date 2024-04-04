@@ -25,7 +25,6 @@ namespace ConsoleMarket
         {
             this.UserChart = new ShopChart();
             this.Adress = adress;
-            
             this.UserId = Guid.NewGuid().ToString();
 
         }
