@@ -116,7 +116,9 @@ namespace ConsoleMarket
         }
 
 
-        public bool PaymentRequest( BankCard card , double price)
+
+        // make this return a payment
+        public Payment PaymentRequest( BankCard card , double price)
         {
             // kart bize mi ait 
             if (cardChecker(card) == false) { return false;  }
