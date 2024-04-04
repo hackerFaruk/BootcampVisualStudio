@@ -65,4 +65,4 @@ So during creation banks have random number, during bank account creation those 
 
 ## databaseLogger
 
-This is a poroject to connect .net and mssql,   it is a simple console app that perfoprms database CRUD 
+This is a project to connect .net and mssql,   it is a simple console app that performs database CRUD 
