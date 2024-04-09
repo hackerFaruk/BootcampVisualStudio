@@ -1,0 +1,17 @@
+how to get coonection string
+
+
+from view open sql server object explorer
+
+right tclick to local dbd and properties
+
+it show a connection string upper side of newly opened protperties 
+
+for catalog give the name of LoggerContext since your file name is logger context.cs 
+
+then from tools open nuget package manager console 
+
+Add-Migration migrationname
+Update-Database 
+
+to generate your data base 
