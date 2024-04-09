@@ -19,7 +19,7 @@ namespace EntityFrameWorkFirst.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=HACQER-FARUK\\SQLEXPRESS;Database=myDatabase;User Id=sa;Password=123;";
+            string connectionString = "Server=HACQER-FARUK\\SQLEXPRESS;Database=LoggerDatabase;User Id=sa;Password=123;Encrypt=True";
 
             optionsBuilder.UseSqlServer(connectionString);
         }
