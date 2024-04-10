@@ -10,12 +10,24 @@ using EntityFrameWorkFirst.Data;
 using EntityFrameWorkFirst.Models;
 
 // you need to create context to create new log but update database
-using LoggerContext context = new LoggerContext();
+
 
 namespace EntityFrameWorkFirst
 {
     
     public class LogAdder
     {
+
+        public void AddNewLog(String title , String body, LoggerContext context)
+        {
+            // creates new entry model
+            Entry newEntry = new Entry()
+            {
+                Title = title,
+                Body = body
+            };
+            context.Add(newEntry);
+            context.SaveChanges();
+        }
     }
 }
