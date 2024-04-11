@@ -17,8 +17,16 @@ namespace EntityFrameWorkFirst
     
     public class LogAdder
     {
+        LoggerContext context;
 
-        public void AddNewLog(String title , String body, LoggerContext context)
+        public LogAdder(LoggerContext context)
+        {
+            this.context = context;
+        }
+
+
+
+        public void AddNewLog(String title , String body)
         {
             // creates new entry model
             Entry newEntry = new Entry()

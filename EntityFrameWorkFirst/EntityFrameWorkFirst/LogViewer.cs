@@ -13,7 +13,13 @@ namespace EntityFrameWorkFirst
 {
     public class LogViewer
     {
-        public void ViewLog( LoggerContext context)
+        LoggerContext context;
+
+        public LogViewer(LoggerContext context) {
+            this.context = context;
+        }
+
+        public void ViewLog()
         {
             var entries = context.LogEntries.OrderBy(p => p.Title);
             foreach(var entry in entries)
