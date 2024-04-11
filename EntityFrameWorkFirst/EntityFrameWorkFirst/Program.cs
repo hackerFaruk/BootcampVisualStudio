@@ -28,7 +28,11 @@ namespace EntityFrameWorkFirst
             // this comes from log vievwr
             LogViewer logViewer = new LogViewer(context);  
 
+            // this from logtitle serach
+            LogTitleSearch titleSearcher = new LogTitleSearch(context);
 
+
+           
 
           
 
@@ -51,12 +55,32 @@ namespace EntityFrameWorkFirst
 
             // this comes from log vievwr
             LogViewer logViewer = new LogViewer(context);
-            Console.WriteLine("Hello, World!");
+
+            // this from logtitle serach
+            LogTitleSearch titleSearcher = new LogTitleSearch(context);
+
+
+
+            Console.WriteLine("this is log text adds 3 log entrierse");
             logAdder.AddNewLog("İlk not", "bu not ilk notum");
             logAdder.AddNewLog("ikinci not", "bu not ikinci notum");
             logAdder.AddNewLog("üçüncü not", "bu not üçünüc notum");
 
+
+
+            Console.WriteLine(" shows logss");
+
             logViewer.ViewLog();
+
+            Console.WriteLine(" ssss");
+            Console.WriteLine(" ssss");
+            Console.WriteLine(" ssss");
+
+
+
+            Console.WriteLine(" searchs for ilk  on title ");
+            titleSearcher.TitleSearch("ilk");
+
 
         }
 
