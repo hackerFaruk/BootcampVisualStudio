@@ -21,7 +21,7 @@ namespace EntityFrameWorkFirst.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=HACQER-FARUK\\SQLEXPRESS;Database=LoggerDatabase;User Id=sa;Password=123;Encrypt=True";
+            
 
 
             optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LoggerContext; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False");
