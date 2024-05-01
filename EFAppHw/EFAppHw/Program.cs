@@ -1,10 +1,19 @@
-﻿namespace EFAppHw
+﻿using EFAppHw.Models;
+
+namespace EFAppHw
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            using NorthwindContext context = new NorthwindContext();
+
+            Show show = new Show(context);
+
+            show.Catagories();
+
+
+
         }
     }
 }
