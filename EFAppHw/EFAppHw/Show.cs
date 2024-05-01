@@ -21,6 +21,7 @@ internal class Show
     public void Catagories()
     {
         var catagories = context.Categories.OrderBy(p => p.CategoryName);
+        
 
         foreach (var entry in catagories)
         {
@@ -28,6 +29,9 @@ internal class Show
             Console.WriteLine($"Id : {entry.CategoryId}");
             Console.WriteLine($"Name : {entry.CategoryName}");
             Console.WriteLine($"Body : {entry.Description}");
+            var size = entry.Products.Count();
+
+            Console.WriteLine($"Size : {size}");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("######");
@@ -38,9 +42,9 @@ internal class Show
 
     public void Customers()
     {
-        var catagories = context.Customers.OrderBy(p => p.CompanyName);
+        var categories = context.Customers.OrderBy(p => p.CompanyName);
 
-        foreach (var entry in catagories)
+        foreach (var entry in categories)
         {
             Console.WriteLine(" ");
             Console.WriteLine($"Id : {entry.CustomerId}");
@@ -55,6 +59,29 @@ internal class Show
     }
 
 
+    public void CustomerByRegion(string citySelection)
+    {
+        var categories = context.Customers
+    .Where(p => p.City.ToLower().Contains(citySelection.ToLower()))
+    .OrderBy(p => p.City);
+
+
+        foreach (var entry in categories)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine($"Id : {entry.CustomerId}");
+            Console.WriteLine($"Company Name : {entry.CompanyName}");
+            Console.WriteLine($"Contact Name : {entry.ContactName}");
+            Console.WriteLine($"City : {entry.City}");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("######");
+
+        }
+
+    }
+
+   
 
 
 
