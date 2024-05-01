@@ -1,0 +1,21 @@
+Install Entity Framework Core Tools: Ensure that you have installed Entity Framework Core tools. 
+You can install it globally using the .NET CLI:
+
+dotnet tool install --global dotnet-ef
+
+
+Navigate to Your Project Directory: Open a terminal or command prompt and navigate to the directory of your .NET project.
+Run Scaffold-DbContext Command: Use the dotnet ef dbcontext scaffold command to scaffold the DbContext and entity classes:
+
+dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Models
+Data Source=HACQER-FARUK\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;Encrypt=False;Trust Server Certificate=True
+
+
+dotnet ef dbcontext scaffold "Data Source=HACQER-FARUK\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+It creates context but with diffrent name plus context
+
+
+
+
