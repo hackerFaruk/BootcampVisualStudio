@@ -10,7 +10,7 @@ namespace EFAppHw
 
             Show show = new Show(context);
 
-            show.Catagories();
+            show.CustomerByRegion("s");
 
 
 

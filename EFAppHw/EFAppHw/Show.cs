@@ -59,6 +59,42 @@ internal class Show
     }
 
 
+
+    public void Products()
+    {
+        var Products = context.Products.OrderBy(p => p.ProductName);
+        foreach(var entry in Products)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine($"Id : {entry.ProductId}");
+            Console.WriteLine($"Product Name : {entry.ProductName}");
+            
+            if (entry.Category != null)
+            {
+                Console.WriteLine($"Category Name : {entry.Category.CategoryName}");
+            }
+            else
+            {
+                Console.WriteLine("Category Name : Not Available");
+            }
+
+           
+            if (entry.UnitsOnOrder.HasValue)
+            {
+                Console.WriteLine($"Order Amount : {entry.UnitsOnOrder.Value}");
+            }
+            else
+            {
+                Console.WriteLine("Order Amount : Not Available");
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("######");
+
+        }
+    }
+
+
     public void CustomerByRegion(string citySelection)
     {
         var categories = context.Customers
