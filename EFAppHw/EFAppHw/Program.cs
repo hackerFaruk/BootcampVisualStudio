@@ -13,6 +13,11 @@ namespace EFAppHw
             show.CustomerByRegion("s");
 
 
+            Create create = new Create();
+
+            create.Category("newProduct", "Trendy Products");
+
+            show.CategoryByName("pr");
 
         }
     }

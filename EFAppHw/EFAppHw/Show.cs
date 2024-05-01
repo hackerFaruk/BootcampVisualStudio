@@ -117,7 +117,29 @@ internal class Show
 
     }
 
-   
+    public void CategoryByName(string categoryName)
+    {
+        var categories = context.Categories
+    .Where(p => p.CategoryName.ToLower().Contains(categoryName.ToLower()))
+    .OrderBy(p => p.CategoryName);
+
+
+        foreach (var entry in categories)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine($"Id : {entry.CategoryId}");
+            Console.WriteLine($"Name : {entry.CategoryName}");
+            Console.WriteLine($"Body : {entry.Description}");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("######");
+
+
+        }
+
+    }
+
+
 
 
 
