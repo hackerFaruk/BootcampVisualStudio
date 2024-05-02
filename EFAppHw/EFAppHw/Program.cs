@@ -15,9 +15,9 @@ namespace EFAppHw
 
             Create create = new Create();
 
-            create.Category("newProduct", "Trendy Products");
+            //create.Category("newProduct", "Trendy Products");
 
-            show.CategoryByName("pr");
+            show.CategoryProductCount();
 
         }
     }

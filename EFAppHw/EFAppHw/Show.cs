@@ -18,25 +18,48 @@ internal class Show
         this.context = context;
     }
 
-    public void Catagories()
+    public void Categories()
     {
-        var catagories = context.Categories.OrderBy(p => p.CategoryName);
+        var categories = context.Categories.OrderBy(p => p.CategoryName);
         
 
-        foreach (var entry in catagories)
+        foreach (var entry in categories)
         {
             Console.WriteLine(" ");
             Console.WriteLine($"Id : {entry.CategoryId}");
             Console.WriteLine($"Name : {entry.CategoryName}");
             Console.WriteLine($"Body : {entry.Description}");
-            var size = entry.Products.Count();
-
-            Console.WriteLine($"Size : {size}");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("######");
 
         }
+    }
+
+    public void CategoryProductCount()
+    {
+        var categories = context.Categories
+                        .OrderBy(p => p.CategoryName)
+                        .Select(category => new
+                        {
+                            CategoryName = category.CategoryName,
+                            ProductCount = category.Products.Count()
+                        })
+                        .ToList();
+
+        foreach (var entry in categories)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine($"Category : {entry.CategoryName}");
+            Console.WriteLine($"Count : {entry.ProductCount}");
+          
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("######");
+
+        }
+
+
     }
 
 
