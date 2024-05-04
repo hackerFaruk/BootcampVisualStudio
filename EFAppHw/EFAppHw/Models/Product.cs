@@ -12,6 +12,7 @@ public partial class Product
 
     public int? SupplierId { get; set; }
 
+    [ForeignKey("Category")]
     public int? CategoryId { get; set; }
 
     public string? QuantityPerUnit { get; set; }
