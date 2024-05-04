@@ -26,7 +26,6 @@ public partial class Product
 
     public bool Discontinued { get; set; }
 
-    [InverseProperty("Products")]
     public virtual Category? Category { get; set; }
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

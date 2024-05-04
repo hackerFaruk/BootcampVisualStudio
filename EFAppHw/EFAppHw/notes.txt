@@ -10,6 +10,8 @@ Run Scaffold-DbContext Command: Use the dotnet ef dbcontext scaffold command to 
 dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Models
 Data Source=HACQER-FARUK\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;Encrypt=False;Trust Server Certificate=True
 
+bunu server explorer yada sql server objected buldk db first iyi method 
+
 
 dotnet ef dbcontext scaffold "Data Source=HACQER-FARUK\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
 

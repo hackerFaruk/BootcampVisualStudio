@@ -29,6 +29,7 @@ internal class Show
             Console.WriteLine($"Id : {entry.CategoryId}");
             Console.WriteLine($"Name : {entry.CategoryName}");
             Console.WriteLine($"Body : {entry.Description}");
+            Console.WriteLine($"Count : {entry.Products.Count()}");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("######");

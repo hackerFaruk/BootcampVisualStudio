@@ -17,6 +17,6 @@ public partial class Category
 
     public byte[]? Picture { get; set; }
 
-    [InverseProperty("Category")]
+    [ForeignKey("Product")]
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

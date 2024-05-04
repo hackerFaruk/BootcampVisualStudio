@@ -17,6 +17,9 @@ namespace EFAppHw
 
             //create.Category("newProduct", "Trendy Products");
 
+
+            show.Categories();
+
             show.CategoryProductCount();
 
         }
